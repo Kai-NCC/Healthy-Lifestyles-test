@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
   );
 
   eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+  eleventyConfig.addWatchTarget("./src/sass/");
+  eleventyConfig.addPassthroughCopy("./src/img/");
 
   return {
     markdownTemplateEngine: 'njk',
