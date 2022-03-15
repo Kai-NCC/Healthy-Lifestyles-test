@@ -1,0 +1,16 @@
+{% extends "template.njk" %}
+{% block main %}
+  <section>
+    <div class="container py-5">
+      <h3>These are your results:</h3>
+      
+      <p id="resultText">placeholder</p>
+
+      <script>
+        window.onload = function() {
+          document.getElementById("resultText").innerHTML = `You selected ${document.cookie}!`;
+        };
+      </script>
+    </div>
+  </section>
+{% endblock %}
