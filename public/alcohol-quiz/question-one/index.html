@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title> - NCC Healthy Lifestyles</title>
+  <title>Quiz Test - NCC Healthy Lifestyles</title>
 </head>
 
 
@@ -69,25 +69,63 @@
     
   <section>
     <div class="container py-5">
-      <h3>These are your results:</h3>
-      
-      <p id="resultText">placeholder</p>
+      <h3>How frequently do you drink alcohol?</h3>
+      <form>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="questionOne" value="Answer1" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Never or less than once a year
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="questionOne" value="Answer2" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Less than or around once a month
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="questionOne" value="Answer3" id="flexRadioDefault3">
+          <label class="form-check-label" for="flexRadioDefault3">
+            Multiple times a month, maybe even once a week
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="questionOne" value="Answer4" id="flexRadioDefault4">
+          <label class="form-check-label" for="flexRadioDefault4">
+            Every day, sometimes multiple times a day
+          </label>
+        </div>
+        <input type="button" class="btn btn-primary btn-lg my-3" value="Submit" id="submit" onclick="submitForm(this.form.questionOne);"></input>
+      </form>
 
       <script>
-        window.onload = function() {
-          let answer = document.cookie;
-          if (answer == "Answer1") {
-            document.getElementById("resultText").innerHTML = 'You are probably very healthy and drink very rarely, if ever.';
-          } else if (answer == "Answer2") {
-            document.getElementById("resultText").innerHTML = 'You drink, but not much. You\'re probably reasonably healthy.';
-          } else if (answer == "Answer3") {
-            document.getElementById("resultText").innerHTML = 'This is a reasonable amount of alcohol to drink, for most people. For some, it may be a little too much.';
-          } else if (answer == "Answer4") {
-            document.getElementById("resultText").innerHTML = 'Based on your response, you either drink just barely within a healthy limit or you need immediate help.';
-          } else {
-            document.getElementById("resultText").innerHTML = 'We can\'t give a proper result - something went wrong.';
+
+        
+
+        
+
+        function submitForm(radioObject) {
+          let selectedInput = null;
+
+          for (var i = 0; i < radioObject.length; i++) {
+            if (radioObject[i].checked) {
+              value = radioObject[i].value;
+            }
           }
-        };
+
+          console.log(`value = ${value}`);
+          let hour = 1/24;
+          setCookie('q1answer', value, hour);
+
+          window.location.href = "/healthy-lifestyles-test/public/alcohol-quiz/results";
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+          const d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          let expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
       </script>
     </div>
   </section>

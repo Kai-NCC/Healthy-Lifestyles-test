@@ -3,79 +3,26 @@
 {% import "_pattern_macros/navigation_card.njk" as navcard %}
 {% import "_pattern_macros/general_card.njk" as generalcard %}
 
-{% set title = "Quiz Test" %}
+{% set title = "Healthy Lifestyles" %}
 
 {% block main %}
+
+  <div class="stage" id="healthyLifestylesStage" style="background-image: url('/healthy-lifestyles-test/public/img/beach.jpg')">
+  </div>
+
   <section>
-    <div class="container py-5">
-      <h3>How frequently do you drink alcohol?</h3>
-      <form>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="questionOne" value="Answer1" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Never or less than once a year
-          </label>
+    <div class="container">
+      <div class="row {{rowDefaults}}">
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('Help to cut back on your drinking', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'lb_16x9.jpg', 'alcohol-quiz/question-one', 'card-light') }}
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="questionOne" value="Answer2" id="flexRadioDefault2">
-          <label class="form-check-label" for="flexRadioDefault2">
-            Less than or around once a month
-          </label>
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('How to achieve a healthy diet', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'lb_16x9.jpg', 'alcohol-quiz/question-one', 'card-light') }}
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="questionOne" value="Answer3" id="flexRadioDefault3">
-          <label class="form-check-label" for="flexRadioDefault3">
-            Multiple times a month, maybe even once a week
-          </label>
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('Help to quit smoking', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'lb_16x9.jpg', 'alcohol-quiz/question-one', 'card-light') }}
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="questionOne" value="Answer4" id="flexRadioDefault4">
-          <label class="form-check-label" for="flexRadioDefault4">
-            Every day, sometimes multiple times a day
-          </label>
-        </div>
-        <input type="button" class="btn btn-primary btn-lg my-3" value="Submit" id="submit" onclick="submitForm(this.form.questionOne);"></input>
-      </form>
-
-      <script>
-
-        {# 
-        
-        https://www.sitepoint.com/get-url-parameters-with-javascript/ 
-        
-        http://www.java2s.com/Tutorials/Javascript/Javascript_Form_How_to/Select/Loop_through_each_Radio_Button_and_get_the_selected_ones.htm
-
-        https://stackoverflow.com/questions/33249166/javascript-using-cookie-to-pass-variables-to-another-page
-        
-
-        #}
-
-        {# var today = new Date();
-        var expiry = new Date(today.getTime() + 2 * 24 * 3600 * 1000); // plus 2 days
-
-        function setCookie(name, value) {
-          document.cookie = name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
-        }
-        function putCookie(form) {
-          setCookie("formResult", form[0].usrname.value);
-          return true;
-        } #}
-
-        function submitForm(radioObject) {
-          let selectedInput = null;
-
-          for (var i = 0; i < radioObject.length; i++) {
-            if (radioObject[i].checked) {
-              value = radioObject[i].value;
-            }
-          }
-
-          console.log(`value = ${value}`);
-          document.cookie = value;
-
-          window.location.href = 'results';
-        }
-      </script>
+      </div>
     </div>
   </section>
 {% endblock %}

@@ -11967,20 +11967,20 @@ header .top-wrapper #navbar-main .navbar-nav {
 }
 header .top-wrapper #navbar-main .navbar-nav .nav-item {
   margin: 0 20px 0 0;
-  height: 100%;
+  padding: 0;
 }
-header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link a {
+header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link {
   color: #212529;
   font-size: 1.125rem;
   padding: 8px 0px;
 }
-header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link a:hover {
+header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link:hover {
   color: black;
 }
-header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link a:active {
+header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link:active {
   color: black;
 }
-header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link a:focus {
+header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link:focus {
   transition: none;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -12226,6 +12226,16 @@ section.section_stage_theme .lead {
 }
 .section_light_theme .more-link svg path {
   fill: #212529;
+}
+
+.stage {
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  background-position: center center;
 }
 
 .breadcrumbs {

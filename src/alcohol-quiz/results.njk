@@ -9,13 +9,14 @@
       <script>
         window.onload = function() {
           let answer = document.cookie;
-          if (answer == "Answer1") {
+          console.log(`cookie contents= ${answer}`);
+          if (answer == "q1answer=Answer1") {
             document.getElementById("resultText").innerHTML = 'You are probably very healthy and drink very rarely, if ever.';
-          } else if (answer == "Answer2") {
+          } else if (answer == "q1answer=Answer2") {
             document.getElementById("resultText").innerHTML = 'You drink, but not much. You\'re probably reasonably healthy.';
-          } else if (answer == "Answer3") {
+          } else if (answer == "q1answer=Answer3") {
             document.getElementById("resultText").innerHTML = 'This is a reasonable amount of alcohol to drink, for most people. For some, it may be a little too much.';
-          } else if (answer == "Answer4") {
+          } else if (answer == "q1answer=Answer4") {
             document.getElementById("resultText").innerHTML = 'Based on your response, you either drink just barely within a healthy limit or you need immediate help.';
           } else {
             document.getElementById("resultText").innerHTML = 'We can\'t give a proper result - something went wrong.';
