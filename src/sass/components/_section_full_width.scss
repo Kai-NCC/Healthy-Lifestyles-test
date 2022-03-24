@@ -15,17 +15,18 @@ section.section_light_theme {
 }
 
 section.section_stage_theme {
-  background-color: #350C78;
-  color: $light;
+  background-color: $gray-300;
+  color: $dark;
 
   h1 {
     font-weight: 700;
   }
 
   .lead {
-    color: $light;
+    color: $dark;
     font-weight: 400;
     margin: 20px 0 10px 0;
+    font-size: 1.25rem;
   }
   padding: 40px 0px;
   margin-bottom: 40px;

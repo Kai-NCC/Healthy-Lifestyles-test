@@ -1,7 +1,7 @@
 .breadcrumbs {
-  background-color: $gray-200;
+  background-color: $gray-400;
   padding: 8px 0px;
-  margin-bottom: 15px;
+  border-bottom: solid silver 1px;
 
   .breadcrumb {
 
@@ -11,7 +11,6 @@
     .breadcrumb-item {
       position: relative;
       height: 27px;
-      font-weight: 600 !important;
       font-size: 1.125rem !important;
 
       &:first-child {
@@ -29,13 +28,16 @@
       }
       
       a {
-        text-decoration: underline;
+        text-decoration: none;
         color: $dark;
+        font-weight: 800 !important;
 
         &:hover {
+          text-decoration: underline;
           text-decoration-thickness: 2px;
         }
         &:focus {
+          text-decoration: underline;
           color: $focus-text-colour;
           background-color: $focus-colour;
           outline: none;
@@ -56,7 +58,7 @@
       }
     }
     .breadcrumb-item.active {
-      font-weight: 400 !important;
+      font-weight: 500 !important;
       font-size: 1.125rem !important;
     }
   }

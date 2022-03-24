@@ -1,0 +1,46 @@
+{% extends "template.njk" %}
+
+{% import "_pattern_macros/navigation_card.njk" as navcard %}
+{% import "_pattern_macros/general_card.njk" as generalcard %}
+
+{% set title = "Healthy Lifestyles" %}
+
+{% block main %}
+
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-2">
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Care, support and health</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Health and wellbeing</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Healthy lifestyles</a></li>
+          <li class="breadcrumb-item active">Help to cut back on your drinking</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section_stage_theme">
+    <div class="container">
+      <h1 class="h2">Help to cut back on your drinking</h1>
+      <p class="lead col-12 col-lg-6">If you're not sure whether you're drinking too much alcohol, or if you want to change your drinking, the step-by-step guidance below will help you.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row {{rowDefaults}}">
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('Help to cut back on your drinking', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'wine.jpg', 'alcohol-quiz/question-one', 'card-light') }}
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('How to achieve a healthy diet', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'food.jpg', 'alcohol-quiz/question-one', 'card-light') }}
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          {{ generalcard.generalcard('Help to quit smoking', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'smoke.jpg', 'alcohol-quiz/question-one', 'card-light') }}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

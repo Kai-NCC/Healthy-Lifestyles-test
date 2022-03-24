@@ -11972,6 +11972,7 @@ header .top-wrapper #navbar-main .navbar-nav .nav-item {
 header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link {
   color: #212529;
   font-size: 1.125rem;
+  font-weight: 700 !important;
   padding: 8px 0px;
 }
 header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link:hover {
@@ -12201,8 +12202,8 @@ section.section_light_theme {
 }
 
 section.section_stage_theme {
-  background-color: #350C78;
-  color: #f8f9fa;
+  background-color: #dee2e6;
+  color: #212529;
   padding: 40px 0px;
   margin-bottom: 40px;
 }
@@ -12210,9 +12211,10 @@ section.section_stage_theme h1, section.section_stage_theme .h1 {
   font-weight: 700;
 }
 section.section_stage_theme .lead {
-  color: #f8f9fa;
+  color: #212529;
   font-weight: 400;
   margin: 20px 0 10px 0;
+  font-size: 1.25rem;
 }
 
 .section-nav-card {
@@ -12298,9 +12300,9 @@ section.section_stage_theme .lead {
 }
 
 .breadcrumbs {
-  background-color: #e9ecef;
+  background-color: #ced4da;
   padding: 8px 0px;
-  margin-bottom: 15px;
+  border-bottom: solid silver 1px;
 }
 .breadcrumbs .breadcrumb {
   display: flex;
@@ -12309,7 +12311,6 @@ section.section_stage_theme .lead {
 .breadcrumbs .breadcrumb .breadcrumb-item {
   position: relative;
   height: 27px;
-  font-weight: 600 !important;
   font-size: 1.125rem !important;
 }
 .breadcrumbs .breadcrumb .breadcrumb-item:first-child:before {
@@ -12323,13 +12324,16 @@ section.section_stage_theme .lead {
   color: #343a40;
 }
 .breadcrumbs .breadcrumb .breadcrumb-item a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #212529;
+  font-weight: 800 !important;
 }
 .breadcrumbs .breadcrumb .breadcrumb-item a:hover {
+  text-decoration: underline;
   text-decoration-thickness: 2px;
 }
 .breadcrumbs .breadcrumb .breadcrumb-item a:focus {
+  text-decoration: underline;
   color: #0b0c0c;
   background-color: #ffdd00;
   outline: none;
@@ -12348,7 +12352,7 @@ section.section_stage_theme .lead {
   padding: 0 0 0 0;
 }
 .breadcrumbs .breadcrumb .breadcrumb-item.active {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: 1.125rem !important;
 }
 
