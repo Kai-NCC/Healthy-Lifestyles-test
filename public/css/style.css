@@ -2436,14 +2436,14 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: white;
+  border-color: white;
 }
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 .form-check-input:checked[type=radio] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='50505'/%3e%3c/svg%3e");
 }
 .form-check-input[type=checkbox]:indeterminate {
   background-color: #0d6efd;
@@ -12299,6 +12299,42 @@ section.section_stage_theme .lead {
   background-position: center center;
 }
 
+.form-check.radio-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.form-check.radio-form label {
+  margin-left: 10px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.form-check.radio-form input {
+  width: 44px;
+  height: 44px;
+  border: solid #212529 2px;
+}
+.form-check.radio-form input:focus, .form-check.radio-form input:focus-visible {
+  box-shadow: none;
+  outline: solid 5px #ffdd00;
+  border: solid #0b0c0c 5px;
+  outline-offset: 0;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.95' fill='50505'/%3e%3c/svg%3e");
+}
+.form-check.radio-form input:active {
+  filter: none;
+}
+
+.question-number {
+  margin-bottom: 5px;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.question-title {
+  margin-bottom: 20px;
+}
+
 .breadcrumbs {
   background-color: #ced4da;
   padding: 8px 0px;
@@ -12453,6 +12489,10 @@ a:focus {
   background-color: #ffdd00;
   text-decoration: underline;
   outline: none;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 800;
 }
 
 pre {
