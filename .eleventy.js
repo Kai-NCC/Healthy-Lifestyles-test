@@ -18,6 +18,6 @@ module.exports = function(eleventyConfig) {
       input: "src",
       output: "public"
     },
-    pathPrefix: "/Healthy-Lifestyles-test/public/"
+    pathPrefix: "/Healthy-lifestyles-test/public/"
   };
 };
