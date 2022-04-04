@@ -1,3 +1,36 @@
+.form-check {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  label {
+    margin-left: 10px;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  input[type=checkbox] {
+    width: 44px;
+    height: 44px;
+    border: solid $dark 2px;
+    border-radius: 0;
+    
+
+    &:focus, &:focus-visible {
+      box-shadow: none;
+      outline: solid 5px $focus-colour;
+      border: solid $focus-text-colour 5px;
+      border-radius: 0;
+      outline-offset: 0;
+      // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.95' fill='50505'/%3e%3c/svg%3e");
+    }
+    &:active {
+      filter: none;
+    }
+  }
+}
+
 .form-check.radio-form {
   display: flex;
   align-items: center;

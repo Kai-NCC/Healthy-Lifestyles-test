@@ -1,0 +1,59 @@
+
+
+{% extends "template.njk" %}
+
+{% import "_pattern_macros/navigation_card.njk" as navcard %}
+{% import "_pattern_macros/general_card.njk" as generalcard %}
+
+{% set title = "Alcohol goals and plan" %}
+
+{% block main %}
+
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-2">
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Care, support and health</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Health and wellbeing</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Healthy lifestyles</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/help-to-cut-back-on-your-drinking/' | url }}">Help to cut back on your drinking</a></li>
+          <li class="breadcrumb-item active">Alcohol goals and plan</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section_stage_theme">
+    <div class="container">
+      <h1 class="h2">Alcohol goals and plan</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+        <h2 class="h3">Privacy</h2>
+        <p>Before you complete this form please read <a href="{{ '/' | url }}">Norfolk County Council privacy notice</a></p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="privacyQuestionOne" value="privacyAnswer1" id="privacyCheckbox1">
+          <label class="form-check-label" for="privacyCheckbox1">
+            Tick to confirm that you have read our privacy notice
+          </label>
+        </div>
+
+      
+        <h2 class="h3">Can you help us with our research?</h2>
+        <p>We'd like to review your data and send you a follow-up survey after 4 weeks. Any data you share will only be reviewed by our design team.</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="privacyQuestionTwo" value="privacyAnswer2" id="privacyCheckbox2">
+          <label class="form-check-label" for="privacyCheckbox2">
+            If you are happy for us to collect data from this form, please tick this box.
+          </label>
+          <input class="form-check-input" type="checkbox" name="privacyQuestionThree" value="privacyAnswer3" id="privacyCheckbox3">
+          <label class="form-check-label" for="privacyCheckbox3">
+            If you would be happy to receive a survey, please tick this box
+          </label>
+        </div>
+    </div>
+  </section>
+{% endblock %}
