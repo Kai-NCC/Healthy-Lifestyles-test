@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Alcohol goals and plan - NCC Healthy Lifestyles</title>
+  <title>Your reasons for change - NCC Healthy Lifestyles</title>
 </head>
 
 
@@ -92,30 +92,29 @@
   <section>
     <div class="container">
       <div class="col-12 col-md-9">
-        <h2 class="h3 mb-2">Privacy</h2>
-        <p>Before you complete this form please read <a href="/Healthy-Lifestyles-test/public/">Norfolk County Council privacy notice</a></p>
-        <div class="form-check pb-4 pt-2" id="privacyFormOne">
-          <input class="form-check-input" type="checkbox" name="privacyQuestionOne" value="privacyAnswer1" id="privacyCheckbox1">
-          <label class="form-check-label" for="privacyCheckbox1">
-            Tick to confirm that you have read our privacy notice
-          </label>
+        <h2 class="h3 mb-2">Your reasons for change</h2>
+        <p>Think about the most important reason or reasons why you want to cut down your drinking. It can be helpful to note down this reason and to remind yourself of it.</p>
+        
+        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">The most important reason/s for wanting to lower my drinking is/are:</h3>
+
+        <div class="row py-4">
+          <div class="col-12 col-md-5">
+            <div class="interactive-text-box empty">
+              <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+              <p class="placeholder-text">Add reason</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="interactive-text-box">
+              Think about the most important reason or reasons why you want to cut down your drinking. It can be helpful to note down this reason and to remind yourself of it.
+            </div>
+          </div>
         </div>
-      
-        <h2 class="h3 mb-2">Can you help us with our research?</h2>
-        <p>We'd like to review your data and send you a follow-up survey after 4 weeks. Any data you share will only be reviewed by our design team.</p>
-        <div class="form-check pt-2" id="privacyFormTwo">
-          <input class="form-check-input" type="checkbox" name="privacyQuestionTwo" value="privacyAnswer2" id="privacyCheckbox2">
-          <label class="form-check-label" for="privacyCheckbox2">
-            If you are happy for us to collect data from this form, please tick this box.
-          </label>
+
+        <div class="double-btn-group">
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitForm();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitForm();"></input>
         </div>
-        <div class="form-check pb-4 pt-2" id="privacyFormThree">
-          <input class="form-check-input" type="checkbox" name="privacyQuestionThree" value="privacyAnswer3" id="privacyCheckbox3">
-          <label class="form-check-label" for="privacyCheckbox3">
-            If you would be happy to receive a survey, please tick this box
-          </label>
-        </div>
-        <input type="button" class="btn  btn-lg form-btn my-3" value="Set goals and make an action plan" id="submit" onclick="submitForm(document.getElementById('privacyFormOne').privacyQuestionOne, document.getElementById('privacyFormTwo').privacyQuestionTwo, document.getElementById('privacyFormThree').privacyQuestionThree);"></input>
       </div>
     </div>
 
@@ -145,7 +144,7 @@
         setCookie('q2answer', value2, hour);
         setCookie('q3answer', value3, hour);
 
-        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/your-reasons-for-change/";
+        window.location.href = "/Healthy-Lifestyles-test/public/";
       }
 
       function setCookie(cname, cvalue, exdays) {
