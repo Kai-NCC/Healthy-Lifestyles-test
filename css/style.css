@@ -12511,6 +12511,9 @@ section.section_stage_theme .lead {
   margin-bottom: 16px;
   background: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 @media (prefers-reduced-motion: reduce) {
   .modal-selection-btn {
@@ -12518,9 +12521,18 @@ section.section_stage_theme .lead {
     transition: none;
   }
 }
+.modal-selection-btn p {
+  margin-bottom: 0;
+}
+.modal-selection-btn svg {
+  display: none;
+}
 
 .modal-selection-btn.selected {
   border: solid #1C995D 3px;
+}
+.modal-selection-btn.selected svg {
+  display: block;
 }
 
 .modal-header {
