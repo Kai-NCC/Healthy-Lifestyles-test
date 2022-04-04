@@ -12352,6 +12352,31 @@ section.section_stage_theme .lead {
   filter: none;
 }
 
+input.form-btn {
+  background-color: #1C995D;
+  color: #f8f9fa;
+  font-size: 1.325rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  input.form-btn {
+    animation: none;
+    transition: none;
+  }
+}
+input.form-btn:hover {
+  background-color: #18814e;
+  color: white;
+}
+input.form-btn:focus {
+  background-color: #ffdd00;
+  color: #0b0c0c;
+  outline: solid #0b0c0c 3px;
+  box-shadow: none;
+  transition: none;
+}
+
 .question-number {
   margin-bottom: 5px;
   color: #6c757d;

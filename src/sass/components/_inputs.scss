@@ -62,6 +62,26 @@
   }
 }
 
+input.form-btn {
+  background-color: #1C995D;
+  color: $light;
+  font-size: 1.325rem;
+  font-weight: 600;
+  @include ani;
+
+  &:hover {
+    background-color: #18814e;
+    color: white;
+  }
+  &:focus {
+    background-color: $focus-colour;
+    color: $focus-text-colour;
+    outline: solid $focus-text-colour 3px;
+    box-shadow: none;
+    transition: none;
+  }
+}
+
 .question-number {
   margin-bottom: 5px;
   color: $gray-600;
