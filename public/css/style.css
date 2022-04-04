@@ -12411,6 +12411,14 @@ input.form-btn:focus {
   padding-left: 32px;
   color: #343a40;
 }
+@media (max-width: 575.98px) {
+  .breadcrumbs .breadcrumb .breadcrumb-item {
+    display: none;
+  }
+  .breadcrumbs .breadcrumb .breadcrumb-item:first-child, .breadcrumbs .breadcrumb .breadcrumb-item:last-child {
+    display: inline;
+  }
+}
 .breadcrumbs .breadcrumb .breadcrumb-item a {
   text-decoration: none;
   color: #212529;
