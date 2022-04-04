@@ -207,9 +207,19 @@
   margin-bottom: 16px;
   background: none;
   @include ani;
+
+  p { margin-bottom: 0; }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg { display: none; }
 }
 .modal-selection-btn.selected {
   border: solid #1C995D 3px;
+
+  svg { display: block; }
 }
 
 .modal-header {
