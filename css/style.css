@@ -12310,10 +12310,20 @@ section.section_stage_theme .lead {
   font-weight: 500;
 }
 .form-check input[type=checkbox] {
-  width: 44px;
-  height: 44px;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
   border: solid #212529 2px;
   border-radius: 0;
+}
+@media (max-width: 767.98px) {
+  .form-check input[type=checkbox] {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
 }
 .form-check input[type=checkbox]:focus, .form-check input[type=checkbox]:focus-visible {
   box-shadow: none;
@@ -12363,6 +12373,17 @@ input.form-btn {
   input.form-btn {
     animation: none;
     transition: none;
+  }
+}
+@media (max-width: 767.98px) {
+  input.form-btn {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 575.98px) {
+  input.form-btn {
+    font-size: 1.125rem;
+    white-space: normal;
   }
 }
 input.form-btn:hover {
