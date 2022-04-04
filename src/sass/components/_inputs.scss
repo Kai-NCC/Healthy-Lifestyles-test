@@ -11,11 +11,19 @@
   }
 
   input[type=checkbox] {
-    width: 44px;
-    height: 44px;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
     border: solid $dark 2px;
     border-radius: 0;
     
+    @include media-breakpoint-down(md) {
+      width: 30px !important;
+      height: 30px !important;
+      min-width: 30px !important;
+      min-height: 30px !important;
+    }
 
     &:focus, &:focus-visible {
       box-shadow: none;
@@ -47,7 +55,6 @@
     width: 44px;
     height: 44px;
     border: solid $dark 2px;
-    
 
     &:focus, &:focus-visible {
       box-shadow: none;
@@ -68,6 +75,14 @@ input.form-btn {
   font-size: 1.325rem;
   font-weight: 600;
   @include ani;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.25rem;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 1.125rem;
+    white-space: normal;
+  }
 
   &:hover {
     background-color: #18814e;
