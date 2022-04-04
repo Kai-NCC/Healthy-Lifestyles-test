@@ -150,6 +150,11 @@ header {
       border: solid silver 1px;
       border-radius: 5px 0px 0px 5px;
       min-width: 275px;
+
+      @include media-breakpoint-down(sm) {
+        min-width: 0;
+      }
+
       &:focus {
         transition: none;
         border-color: $focus-colour;
