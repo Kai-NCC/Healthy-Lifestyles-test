@@ -12016,6 +12016,11 @@ header .main-search-area input {
   border-radius: 5px 0px 0px 5px;
   min-width: 275px;
 }
+@media (max-width: 575.98px) {
+  header .main-search-area input {
+    min-width: 0;
+  }
+}
 header .main-search-area input:focus {
   transition: none;
   border-color: #ffdd00;
