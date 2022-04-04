@@ -12495,11 +12495,23 @@ section.section_stage_theme .lead {
   fill: #212529;
 }
 
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-body {
+  padding-bottom: 0;
+}
+
 .modal-selection-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+  padding-bottom: 0;
+}
+.modal-selection-list margin hr {
+  margin: 0;
 }
 
 .modal-selection-btn {
@@ -12533,6 +12545,26 @@ section.section_stage_theme .lead {
 }
 .modal-selection-btn.selected svg {
   display: block;
+}
+
+.reason-custom-label {
+  font-weight: 600;
+  color: #6c757d;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.selection-textarea {
+  resize: none;
+  border: solid silver 2px;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+#own-reason-area {
+  display: none;
 }
 
 .modal-header {

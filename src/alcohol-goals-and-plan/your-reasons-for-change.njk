@@ -57,8 +57,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Reasons</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h4 class="modal-title" id="exampleModalLabel">Reasons</h4>
               </div>
               <div class="modal-body">
                 <div class="modal-selection-list">
@@ -98,6 +97,14 @@
                     <p>My own reason</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
                   </button>
+                  <div id="own-reason-area">                 
+                    <p class="reason-custom-label">Add your own reason:</p>
+                    <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
+                    <div>
+                      <button class="btn btn-primary btn-lg">Add reason</button>
+                    </div>
+                  </div>
+                  <hr>
                 </div>
               </div>
               <div class="modal-footer">
@@ -115,45 +122,14 @@
     </div>
 
     <script>
-      function submitForm(checkObject1, checkObject2, checkObject3) {
-        let selectedInput = null;
-
-        let value1 = false;
-        let value2 = false;
-        let value3 = false;
-
-        // if (checkObject1.checked) {
-        //   value1 = checkObject1.value;
-        // }
-        // if (checkObject2.checked) {
-        //   value2 = checkObject2.value;
-        // }
-        // if (checkObject3.checked) {
-        //   value3 = checkObject3.value;
-        // }
-
-        // doesnt work currently, will fix later
-
-        console.log(`value1 = ${value1}, value2 = ${value2}, value3 = ${value3}`);
-        let hour = 1/24;
-        setCookie('q1answer', value1, hour);
-        setCookie('q2answer', value2, hour);
-        setCookie('q3answer', value3, hour);
-
-        window.location.href = "{{ '/' | url }}";
-      }
-
-      function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-
+      
       function selectBtnOption(btnID) {
-        console.log(`btn id= ${btnID}`);
         let button = document.getElementById(btnID);
         button.classList.toggle("selected");
+
+        if (btnID == "reason9") {
+          document.getElementById("own-reason-area").style.display = "block";
+        }
       }
 
     </script>
