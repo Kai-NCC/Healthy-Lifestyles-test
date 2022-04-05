@@ -3,21 +3,19 @@
   border-bottom: solid $gray-500 1px;
   display: flex;
   flex-wrap: wrap;
-  
   .timeline {
     padding-top: 100px;
     padding-bottom: 50px;
-    @include media-breakpoint-down(lg) { padding: 40px; }
-    
+    @include media-breakpoint-down(lg) {
+      padding: 40px;
+    }
     .timeline-title {
       margin-top: -70px;
-      
       @include media-breakpoint-down(lg) {
         margin-top: -20px;
         margin-left: -20px;
       }
     }
-    
     .element {
       min-height: 50px;
       width: 60%;
@@ -25,12 +23,10 @@
       position: relative;
       margin-top: -40px;
       pointer-events: none;
-      
       @include media-breakpoint-down(lg) {
         width: 100%;
         margin-top: 0px;
       }
-      
       .date {
         color: $dark;
         font-size: 1.375rem;
@@ -38,7 +34,6 @@
         position: relative;
         margin-bottom: 0;
         pointer-events: auto;
-        
         &:before {
           content: "";
           display: block;
@@ -50,47 +45,39 @@
           border: solid $dark 2px;
         }
       }
-      
       .row {
         display: flex;
         flex-wrap: nowrap;
-        
-       @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(lg) {
           justify-content: start;
         }      
       }
-      
       .text {
         color: $gray-700;
         font-size: 1.125rem;
         margin-bottom: 20px;
         pointer-events: auto;
       }
-      
       .thumbnail-col {
         display: flex;
         justify-content: end;
         max-width: 100px;
-        
         @include media-breakpoint-down(sm) {
           display: none;
         }
       }
-      
       .thumbnail-wrapper {
         overflow: hidden;
         height: 100px;
         width: 100px;
         margin: 0;
         pointer-events: auto;
-        
         a {
           color: $dark;
           &:hover {
             color: $dark;
           }
         }
-        
         img {
           display: block;
           object-fit: cover;
@@ -99,29 +86,24 @@
         }
       }
     }
-    
     .element:nth-child(odd) {
       float: right;
       text-align: left;
       padding-left: 200px;
-      
       .row {
         flex-direction: row-reverse;
         justify-content: flex-end;
-        
         .thumbnail-col {
           margin-right: 20px;
           justify-content: start;
         }
       }
-      
       .date {
         &:before {
           top: 10px;
           left: -30px;
         }
       }
-      
       &:after {
         position: absolute;
         content: "";
@@ -132,7 +114,6 @@
         left: 82px;
         background: linear-gradient(to top left, rgba(0,0,0,0) calc(50% - 1px), $dark 50%, rgba(0,0,0,0) calc(50% + 1px));
       }
-      
       @include media-breakpoint-down(xxl) {
         &:after {
           width: 120px;
@@ -162,16 +143,13 @@
       float: left;
       text-align: right;
       padding-right: 200px;
-      
       .row {
         justify-content: flex-end;
         .thumbnail-col {
           margin-left: 20px;
         }
-        
         @include media-breakpoint-down(lg) {
           flex-direction: row-reverse;
-        
           .thumbnail-col {
             margin-left: 0;
             margin-right: 20px;
@@ -179,14 +157,12 @@
           }
         }
       }
-      
       .date {
         &:before {
           top: 10px;
           right: -30px;
         }
       }
-      
       &:after {
         position: absolute;
         content: "";
@@ -197,7 +173,6 @@
         right: 82px;
         background: linear-gradient(to top right, rgba(0,0,0,0) calc(50% - 1px), $dark 50%, rgba(0,0,0,0) calc(50% + 1px));
       }
-      
       @include media-breakpoint-down(xxl) {
         &:after {
           width: 120px;
@@ -230,7 +205,6 @@
         }
       }
     }
-    
     .element:last-child {
       &:after {
         display: none;
@@ -238,24 +212,22 @@
     }
   }
 }
-
 .section_dark_theme .timeline-component {
   border-color: $gray-500; 
-  
   .timeline {
     .timeline-title {
       color: $light;
     }
     .element {
+      .text {
+        color: $gray-400;
+      }
       .date {
         color: $light;
         &:before {
           border-color: $light;
           background-color: $dark;
         }
-      }
-      .text {
-        color: $gray-400;
       }
       .thumbnail-wrapper {
         a {
@@ -280,7 +252,6 @@
       &:after {
         background: linear-gradient(to top right, rgba(0,0,0,0) calc(50% - 1px), $light 50%, rgba(0,0,0,0) calc(50% + 1px));
       }
-
       @include media-breakpoint-down(lg) { 
         &:after {
           background: linear-gradient(90deg, rgba(0,0,0,0) calc(50% - 1px), $light 50%, rgba(0,0,0,0) calc(50% + 1px));

@@ -1,6 +1,8 @@
 figure {
-  img, iframe { margin-bottom: 0rem !important;}
-  
+  box-shadow: $object-shadow;
+  img, iframe {
+    margin-bottom: 0rem !important;
+  }
   figcaption {
     text-align: center; 
     color: $dark;
@@ -10,16 +12,12 @@ figure {
     border-bottom: 4px solid $gray-600 !important;
     background-color: $light;
   }
-  box-shadow: $object-shadow;
 }
-
-
 figure.dark {
+  box-shadow: $object-shadow;
   figcaption {
     color: $light;
     background-color: $gray-800;
     border-bottom: 4px solid $gray-400 !important; 
   }
-  box-shadow: $object-shadow;
 }
-

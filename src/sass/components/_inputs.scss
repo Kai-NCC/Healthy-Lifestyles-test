@@ -1,15 +1,12 @@
 .form-check {
   display: flex;
   align-items: center;
-
   margin-bottom: 10px;
-
   label {
     margin-left: 10px;
     font-size: 1.125rem;
     font-weight: 500;
   }
-
   input[type=checkbox] {
     width: 44px !important;
     height: 44px !important;
@@ -17,14 +14,12 @@
     min-height: 44px !important;
     border: solid $dark 2px;
     border-radius: 0;
-    
     @include media-breakpoint-down(md) {
       width: 30px !important;
       height: 30px !important;
       min-width: 30px !important;
       min-height: 30px !important;
     }
-
     &:focus, &:focus-visible {
       box-shadow: none;
       outline: solid 5px $focus-colour;
@@ -38,24 +33,19 @@
     }
   }
 }
-
 .form-check.radio-form {
   display: flex;
   align-items: center;
-
   margin-bottom: 10px;
-
   label {
     margin-left: 10px;
     font-size: 1.125rem;
     font-weight: 500;
   }
-
   input {
     width: 44px;
     height: 44px;
     border: solid $dark 2px;
-
     &:focus, &:focus-visible {
       box-shadow: none;
       outline: solid 5px $focus-colour;
@@ -68,14 +58,12 @@
     }
   }
 }
-
 .form-btn {
+  @include ani;
   background-color: #1C995D;
   color: $light;
   font-size: 1.325rem;
   font-weight: 600;
-  @include ani;
-
   @include media-breakpoint-down(md) {
     font-size: 1.25rem;
   }
@@ -83,7 +71,6 @@
     font-size: 1.125rem;
     white-space: normal;
   }
-
   &:hover {
     background-color: #18814e;
     color: white;
@@ -100,26 +87,21 @@
   background-color: white;
   color: $dark;
   border: solid $dark 2px;
-
   &:hover {
     background-color: $gray-300;
   }
-
   &:focus {
     border-color: $focus-colour;
     background-color: $focus-colour;
     color: $focus-text-colour;
   }
 }
-
 .double-btn-group {
   display: flex;
-
   @include media-breakpoint-down(sm) {
     justify-content: space-between;
   }
 }
-
 .question-number {
   margin-bottom: 5px;
   color: $gray-600;
@@ -128,60 +110,47 @@
 .question-title {
   margin-bottom: 20px;
 }
-
 .interactive-text-box {
   border: solid $gray-700 2px;
   border-radius: 10px;
   padding: 16px;
   height: 300px;
-
   font-weight: 600;
   font-size: 1.125rem;
-  
   display: flex;
-
   user-select: none;
-
+  @include media-breakpoint-down(md) {
+    min-height: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
   .text-box-btn {
     height: 100%;
     width: 100%;
     border: none;
     outline: none;
     background: none;
-
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
-  @include media-breakpoint-down(md) {
-    min-height: 100px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
 }
-
 .interactive-text-box.empty {
+  @include ani;
   border: dashed silver 2px;
   padding: 0;
-
+  justify-content: center;
+  align-items: center;
   .placeholder-text {
     color: $gray-600;
     font-weight: 700;
     font-size: 1.25rem;
     margin-bottom: 0;
   }
-
-  @include ani;
-  justify-content: center;
-  align-items: center;
-
   &:hover {
     cursor: pointer;
     background-color: $gray-200;
     border-color: $dark;
-
     .placeholder-text {
       color: $dark;
     }
@@ -190,30 +159,25 @@
     }
   }
 }
-
 .modal-content {
   border-radius: 10px;
 }
-
 .modal-body {
   padding-bottom: 0;
 }
-
 .modal-selection-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-
   padding-bottom: 0;
   margin
-  
   hr {
     margin: 0;
   }
 }
-
 .modal-selection-btn {
+  @include ani;
   border: dashed silver 3px;
   border-radius: 10px;
   padding: 16px;
@@ -221,29 +185,28 @@
   font-size: 1.125rem;
   margin-bottom: 16px;
   background: none;
-  @include ani;
-
-  p { margin-bottom: 0; }
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  svg { display: none; }
+  p {
+    margin-bottom: 0;
+  }
+  svg {
+    display: none;
+  }
 }
 .modal-selection-btn.selected {
   border: solid #1C995D 3px;
-
-  svg { display: block; }
+  svg {
+    display: block;
+  }
 }
-
 .reason-custom-label {
   font-weight: 600;
   color: $gray-600;
   margin-top: 12px;
   margin-bottom: 6px;
 }
-
 .selection-textarea {
   resize: none;
   border: solid silver 2px;
@@ -252,9 +215,9 @@
   margin-bottom: 6px;
   width: 100%;
 }
-
-#own-reason-area { display: none; }
-
+#own-reason-area {
+  display: none;
+}
 .modal-header {
   border: none;
 }

@@ -11119,11 +11119,11 @@ textarea.form-control-lg {
 }
 /*** start of cards.scss ***/
 .card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: 0px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #212529;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11187,8 +11187,8 @@ textarea.form-control-lg {
   font-weight: 600;
 }
 .card img {
-  border-radius: 0px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 0px;
   object-fit: cover;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11273,10 +11273,10 @@ textarea.form-control-lg {
 }
 
 .navcard {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: none;
   border: solid #dee2e6 1px;
   border-radius: 3px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: white;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11323,6 +11323,7 @@ textarea.form-control-lg {
 }
 
 .promo-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11334,7 +11335,6 @@ textarea.form-control-lg {
   justify-content: start;
   align-items: center;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (prefers-reduced-motion: reduce) {
   .promo-card {
@@ -11372,6 +11372,7 @@ textarea.form-control-lg {
   margin: 10px 0 10px 0;
 }
 .promo-card .card-body .card-link {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: #f8f9fa;
   font-weight: 700;
   font-size: 18px;
@@ -11381,7 +11382,6 @@ textarea.form-control-lg {
   border-radius: 6px;
   text-align: center;
   border: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (prefers-reduced-motion: reduce) {
   .promo-card .card-body .card-link {
@@ -11823,15 +11823,15 @@ textarea.form-control-lg {
 .section_dark_theme .timeline-component .timeline .timeline-title {
   color: #f8f9fa;
 }
+.section_dark_theme .timeline-component .timeline .element .text {
+  color: #ced4da;
+}
 .section_dark_theme .timeline-component .timeline .element .date {
   color: #f8f9fa;
 }
 .section_dark_theme .timeline-component .timeline .element .date:before {
   border-color: #f8f9fa;
   background-color: #212529;
-}
-.section_dark_theme .timeline-component .timeline .element .text {
-  color: #ced4da;
 }
 .section_dark_theme .timeline-component .timeline .element .thumbnail-wrapper a {
   color: #f8f9fa;
@@ -11965,6 +11965,9 @@ header .top-wrapper #navbar-main .navbar-nav {
   height: 100%;
   padding: 0;
 }
+header .top-wrapper #navbar-main .navbar-nav .dropdown-menu {
+  position: absolute;
+}
 header .top-wrapper #navbar-main .navbar-nav .nav-item {
   margin: 0 20px 0 0;
   padding: 0;
@@ -11987,9 +11990,6 @@ header .top-wrapper #navbar-main .navbar-nav .nav-item .nav-link:focus {
   background-color: #ffdd00;
   outline: none;
   text-decoration: underline;
-}
-header .top-wrapper #navbar-main .navbar-nav .dropdown-menu {
-  position: absolute;
 }
 @media (max-width: 767.98px) {
   header .search-wrapper {
@@ -12240,11 +12240,11 @@ section.section_stage_theme .lead {
 .section_light_theme .section-nav-card {
   background-color: white;
 }
-.section_light_theme .section-nav-card:focus-within {
-  background-color: #ffdd00;
-}
 .section_light_theme .section-nav-card .card-title a {
   color: #212529;
+}
+.section_light_theme .section-nav-card:focus-within {
+  background-color: #ffdd00;
 }
 
 .more-link {
@@ -12255,6 +12255,12 @@ section.section_stage_theme .lead {
   font-weight: 600;
   text-decoration: none;
   font-size: 1.125rem;
+}
+.more-link svg {
+  transform: translate(10%, -5%);
+}
+.more-link svg path {
+  fill: #f8f9fa;
 }
 .more-link:hover {
   color: #f8f9fa;
@@ -12271,12 +12277,6 @@ section.section_stage_theme .lead {
 .more-link:focus svg path {
   fill: #0b0c0c;
 }
-.more-link svg {
-  transform: translate(10%, -5%);
-}
-.more-link svg path {
-  fill: #f8f9fa;
-}
 
 .object-promo .card-title a {
   font-weight: 500;
@@ -12286,12 +12286,12 @@ section.section_stage_theme .lead {
 .section_light_theme .more-link {
   color: #212529;
 }
+.section_light_theme .more-link svg path {
+  fill: #212529;
+}
 .section_light_theme .more-link:hover {
   color: #212529;
   border-bottom: 2px solid #212529;
-}
-.section_light_theme .more-link svg path {
-  fill: #212529;
 }
 
 .stage {
@@ -12368,11 +12368,11 @@ section.section_stage_theme .lead {
 }
 
 .form-btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #1C995D;
   color: #f8f9fa;
   font-size: 1.325rem;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (prefers-reduced-motion: reduce) {
   .form-btn {
@@ -12446,6 +12446,13 @@ section.section_stage_theme .lead {
   display: flex;
   user-select: none;
 }
+@media (max-width: 767.98px) {
+  .interactive-text-box {
+    min-height: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
 .interactive-text-box .text-box-btn {
   height: 100%;
   width: 100%;
@@ -12456,32 +12463,25 @@ section.section_stage_theme .lead {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 767.98px) {
-  .interactive-text-box {
-    min-height: 100px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-}
 
 .interactive-text-box.empty {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: dashed silver 2px;
   padding: 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   justify-content: center;
   align-items: center;
-}
-.interactive-text-box.empty .placeholder-text {
-  color: #6c757d;
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 0;
 }
 @media (prefers-reduced-motion: reduce) {
   .interactive-text-box.empty {
     animation: none;
     transition: none;
   }
+}
+.interactive-text-box.empty .placeholder-text {
+  color: #6c757d;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0;
 }
 .interactive-text-box.empty:hover {
   cursor: pointer;
@@ -12515,6 +12515,7 @@ section.section_stage_theme .lead {
 }
 
 .modal-selection-btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: dashed silver 3px;
   border-radius: 10px;
   padding: 16px;
@@ -12522,7 +12523,6 @@ section.section_stage_theme .lead {
   font-size: 1.125rem;
   margin-bottom: 16px;
   background: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12591,6 +12591,18 @@ section.section_stage_theme .lead {
   height: 27px;
   font-size: 1.125rem !important;
 }
+@media (max-width: 575.98px) {
+  .breadcrumbs .breadcrumb .breadcrumb-item {
+    display: none;
+  }
+  .breadcrumbs .breadcrumb .breadcrumb-item:first-child, .breadcrumbs .breadcrumb .breadcrumb-item:last-child {
+    display: inline;
+  }
+}
+.breadcrumbs .breadcrumb .breadcrumb-item .breadcrumb-item.active {
+  font-weight: 500 !important;
+  font-size: 1.125rem !important;
+}
 .breadcrumbs .breadcrumb .breadcrumb-item:first-child:before {
   content: "";
   display: none;
@@ -12600,14 +12612,6 @@ section.section_stage_theme .lead {
 .breadcrumbs .breadcrumb .breadcrumb-item:not(:first-child) {
   padding-left: 32px;
   color: #343a40;
-}
-@media (max-width: 575.98px) {
-  .breadcrumbs .breadcrumb .breadcrumb-item {
-    display: none;
-  }
-  .breadcrumbs .breadcrumb .breadcrumb-item:first-child, .breadcrumbs .breadcrumb .breadcrumb-item:last-child {
-    display: inline;
-  }
 }
 .breadcrumbs .breadcrumb .breadcrumb-item a {
   text-decoration: none;
@@ -12636,10 +12640,6 @@ section.section_stage_theme .lead {
   bottom: 1px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:24px;height:24px' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' /%3E%3C/svg%3E");
   padding: 0 0 0 0;
-}
-.breadcrumbs .breadcrumb .breadcrumb-item.active {
-  font-weight: 500 !important;
-  font-size: 1.125rem !important;
 }
 
 .accordion-flush .accordion-item {

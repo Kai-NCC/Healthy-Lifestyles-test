@@ -9,12 +9,10 @@
         font-size: 1.25rem;
         color: black;
         padding: 16px 20px 16px 30px;
-
         &:focus {
           box-shadow: none;
           outline: solid 3px $focus-colour;
         }
-
         &::after {
           position: absolute;
           left: 0;
@@ -23,7 +21,6 @@
       }
       .accordion-button.collapsed {
         color: $gray-600;
-
         &:hover {
           color: black;
         }
@@ -37,7 +34,6 @@
       .accordion-list {
         list-style: none;
         padding: 0 0 0 12px;
-
         li {
           margin-bottom: 8px;
           a {
@@ -49,11 +45,9 @@
             font-weight: 700;
             padding-left: 10px;
             margin-left: -14px;
-
             &:hover {
               border-color: $link-colour-hover;
             }
-
             &:focus {
               border-color: $focus-text-colour;
             }

@@ -6,6 +6,12 @@
   font-weight: 600;
   text-decoration: none;
   font-size: 1.125rem;
+  svg {
+    transform: translate(10%, -5%);
+  }
+  svg path {
+    fill: $light;
+  }
   &:hover {
     color: $light;
     text-decoration: none;
@@ -17,22 +23,22 @@
     background-color: $focus-colour;
     outline: none;
     text-decoration: none;
-    svg path { fill: $focus-text-colour; }
+    svg path {
+      fill: $focus-text-colour;
+    }
   }
-  svg { transform: translate(10%, -5%); }
-  svg path { fill: $light; }
 }
-
 .object-promo .card-title a {
   font-weight: 500;
 }
-
 /*** to be used on exclusively light backgrounds ***/
 .section_light_theme .more-link {
   color: $dark;
+  svg path {
+    fill: $dark;
+  }
   &:hover {
     color: $dark;
     border-bottom: 2px solid $dark;
   }
-  svg path { fill: $dark; }
 }

@@ -1,20 +1,18 @@
 /*** start of cards.scss ***/
 
 .card {
+  @include ani;
   box-shadow: $object-shadow;
   border: none;
   border-radius: 0px;
   overflow: hidden;  
-  @include ani;
   background-color: $dark;
-  
   .card-body { 
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  
   .img-wrapper {
     overflow: hidden;
     object-fit: contain;
@@ -64,33 +62,43 @@
     font-weight: 600;
   }
   img {
-    border-radius: 0px;
     @include ani;
+    border-radius: 0px;
     object-fit: cover;
   }
   &:hover {
     box-shadow: $object-shadow-hover;
-    
-    img { transform: scale(1.1); }
-    .card-title { text-decoration: underline; }
+    img {
+      transform: scale(1.1);
+    }
+    .card-title {
+      text-decoration: underline;
+    }
   }
   &:focus-within {
     background-color: $focus-colour;
     outline: solid 4px $focus-colour;
     transition: none;
     box-shadow: $object-shadow-hover;
-    
-    img { transform: scale(1.1); }
-    
-    .card-text { color: $focus-text-colour; }
-    .card-location { color: $focus-text-colour; }
-    .card-date { color: $focus-text-colour; }
-    .card-extra-info { color: $focus-text-colour; }
+    img {
+      transform: scale(1.1);
+    }
+    .card-text {
+      color: $focus-text-colour;
+    }
+    .card-location {
+      color: $focus-text-colour;
+    }
+    .card-date {
+      color: $focus-text-colour;
+    }
+    .card-extra-info {
+      color: $focus-text-colour;
+    }
     .flair { 
       color: white;
       background-color: $focus-text-colour;
     }
-    
     .card-title a {
       color: $focus-text-colour;
       font-weight: 700;
@@ -100,29 +108,36 @@
     }
   }
 }
-
 .nohover {
   &:hover {
     box-shadow: $object-shadow;
-    
-    img { transform: none; }
-    .card-title { text-decoration: none; }
+    img {
+      transform: none;
+    }
+    .card-title {
+      text-decoration: none;
+    }
   }
 }
-
-.card-rounded { border-radius: 10px; }
-
+.card-rounded {
+  border-radius: 10px;
+}
 // General cards are not affected by 'prefers-color-scheme' - this class enables light cards
 .card-light {
   background-color: white;
-  
-  .card-location { color: #be4600; }
-  
-  .card-date { color: $gray-600; }
-  
-  .card-extra-info { color: $gray-600; }
-  
-  .card-title a { color: $dark; }
-  
-  .card-text { color: $gray-700; }
+  .card-location {
+    color: #be4600;
+  }
+  .card-date {
+    color: $gray-600;
+  }
+  .card-extra-info {
+    color: $gray-600;
+  }
+  .card-title a {
+    color: $dark;
+  }
+  .card-text {
+    color: $gray-700;
+  }
 }
