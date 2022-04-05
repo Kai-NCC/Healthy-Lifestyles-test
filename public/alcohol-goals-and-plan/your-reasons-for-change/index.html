@@ -187,9 +187,15 @@
       function selectBtnOption(btnID) {
         let button = document.getElementById(btnID);
         button.classList.toggle("selected");
-
+  
         if (btnID == "reason9") {
-          document.getElementById("own-reason-area").style.display = "block";
+          x = document.getElementById("own-reason-area");
+
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
         }
       }
 
