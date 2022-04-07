@@ -229,8 +229,12 @@
 }
 .modal-footer {
   border: none;
+  padding-top: 0;
   display: flex;
   justify-content: center;
+  .form-btn {
+    width: 100%;
+  }
 }
 .reasons-checkbox {
   padding: 0;

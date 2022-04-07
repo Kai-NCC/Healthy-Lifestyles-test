@@ -12578,8 +12578,12 @@ section.section_stage_theme .lead {
 
 .modal-footer {
   border: none;
+  padding-top: 0;
   display: flex;
   justify-content: center;
+}
+.modal-footer .form-btn {
+  width: 100%;
 }
 
 .reasons-checkbox {
