@@ -162,6 +162,12 @@
 .modal-content {
   border-radius: 10px;
 }
+.modal-close-button {
+  &:focus {
+    box-shadow: none;
+    background-color: $focus-colour;
+  }
+}
 .modal-body {
   padding-bottom: 0;
 }

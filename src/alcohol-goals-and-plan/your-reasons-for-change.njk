@@ -39,7 +39,7 @@
         <div class="row py-4">
           <div class="col-12 col-md-5">
             <div class="interactive-text-box empty">
-              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                 <p class="placeholder-text">Add reason</p>
               </button>
@@ -53,17 +53,17 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="reasonsModal" tabindex="-1" aria-labelledby="reasonsModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Reasons</h4>
-                <button type="button" class="offcanvas-close-button btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close preview gallery"></button>
+                <h4 class="modal-title" id="reasonsModalLabel">Reasons</h4>
+                <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
               </div>
               <div class="modal-body">
                 <div class="modal-selection-list">
                   <button class="modal-selection-btn" id="reason1" onclick="selectBtnOption(this.id);">
-                    <p>To be healthier</p>  
+                    <p>To be healthier</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
                   </button>
                   <button class="modal-selection-btn" id="reason2" onclick="selectBtnOption(this.id);">
