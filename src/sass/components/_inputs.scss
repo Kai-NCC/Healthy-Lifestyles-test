@@ -232,3 +232,43 @@
   display: flex;
   justify-content: center;
 }
+.reasons-checkbox {
+  padding: 0;
+  position: relative;
+  .form-check-label {
+    @include ani;
+    border: dashed silver 3px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 16px;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+  }
+  input.reasons-input {
+    @include ani;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    &:checked {
+      &[type="checkbox"] {
+        background-image: escape-svg($form-check-input-checked-bg-image-green);
+      }
+      ~ .form-check-label {
+        border: solid #1C995D 3px;
+      }
+    }
+  }
+}

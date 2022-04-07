@@ -12582,6 +12582,57 @@ section.section_stage_theme .lead {
   justify-content: center;
 }
 
+.reasons-checkbox {
+  padding: 0;
+  position: relative;
+}
+.reasons-checkbox .form-check-label {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: dashed silver 3px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 16px;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reasons-checkbox .form-check-label {
+    animation: none;
+    transition: none;
+  }
+}
+.reasons-checkbox input.reasons-input {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reasons-checkbox input.reasons-input {
+    animation: none;
+    transition: none;
+  }
+}
+.reasons-checkbox input.reasons-input:focus {
+  border: none;
+  outline: none;
+}
+.reasons-checkbox input.reasons-input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%231C995D' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+.reasons-checkbox input.reasons-input:checked ~ .form-check-label {
+  border: solid #1C995D 3px;
+}
+
 .breadcrumbs {
   background-color: #ced4da;
   padding: 8px 0px;

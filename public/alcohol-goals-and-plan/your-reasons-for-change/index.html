@@ -123,42 +123,60 @@
               </div>
               <div class="modal-body">
                 <div class="modal-selection-list">
-                  <button class="modal-selection-btn" id="reason1" onclick="selectBtnOption(this.id);">
-                    <p>To be healthier</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason2" onclick="selectBtnOption(this.id);">
-                    <p>To save money</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason3" onclick="selectBtnOption(this.id);">
-                    <p>No more hangovers</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason4" onclick="selectBtnOption(this.id);">
-                    <p>Gain self-confidence</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason5" onclick="selectBtnOption(this.id);">
-                    <p>Gain optimism</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason6" onclick="selectBtnOption(this.id);">
-                    <p>You feel better</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason7" onclick="selectBtnOption(this.id);">
-                    <p>Your brain heals</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason8" onclick="selectBtnOption(this.id);">
-                    <p>No more guilt over your drinking</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
-                  <button class="modal-selection-btn" id="reason9" onclick="selectBtnOption(this.id);">
-                    <p>My own reason</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1C995D"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                  </button>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason1" id="reason1">
+                    <label class="form-check-label" for="reason1">
+                      To be healthier
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason2" id="reason2">
+                    <label class="form-check-label" for="reason2">
+                      Save money 
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason3" id="reason3">
+                    <label class="form-check-label" for="reason3">
+                      No more hangovers
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason4" id="reason4">
+                    <label class="form-check-label" for="reason4">
+                      Gain self-confidence
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason5" id="reason5">
+                    <label class="form-check-label" for="reason5">
+                      Gain optimism
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason6" id="reason6">
+                    <label class="form-check-label" for="reason6">
+                      You feel better
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason7" id="reason7">
+                    <label class="form-check-label" for="reason7">
+                      Your brain heals
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                    <input class="form-check-input reasons-input" type="checkbox" value="reason8" id="reason8">
+                    <label class="form-check-label" for="reason8">
+                      No more guilt over your drinking
+                    </label>
+                  </div>
+                  <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" type="checkbox" value="reason9" id="reason9" onclick="selectBtnOption(this.id);"/>
+                      <label class="form-check-label" for="reason9">
+                        My own reason
+                      </label>
+                  </div>
                   <div id="own-reason-area">                 
                     <p class="reason-custom-label">Add your own reason:</p>
                     <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
@@ -166,7 +184,6 @@
                       <button class="btn btn-primary btn-lg">Add reason</button>
                     </div>
                   </div>
-                  <hr>
                 </div>
               </div>
               <div class="modal-footer">
