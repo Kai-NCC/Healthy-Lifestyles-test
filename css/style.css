@@ -12499,6 +12499,11 @@ section.section_stage_theme .lead {
   border-radius: 10px;
 }
 
+.modal-close-button:focus {
+  box-shadow: none;
+  background-color: #ffdd00;
+}
+
 .modal-body {
   padding-bottom: 0;
 }
