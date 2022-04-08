@@ -98,17 +98,12 @@
         <h3 class="h4 mb-2 mt-5" style="font-weight: 700">The most important reason/s for wanting to lower my drinking is/are:</h3>
 
         <div class="row py-4" id="reasons-area-row">
-          <div class="col-12 col-md-5">
+          <div class="col-12 col-md-5" id="addReasonsDiv">
             <div class="interactive-text-box empty">
               <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                 <p class="placeholder-text">Add reason</p>
               </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-5">
-            <div class="interactive-text-box">
-              Think about the most important reason or reasons why you want to cut down your drinking. It can be helpful to note down this reason and to remind yourself of it.
             </div>
           </div>
         </div>
@@ -121,84 +116,86 @@
                 <h4 class="modal-title" id="reasonsModalLabel">Reasons</h4>
                 <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
               </div>
-              <div class="modal-body">
-                
-
-                <div class="modal-selection-list">
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason1" id="reason1">
-                    <label class="form-check-label" for="reason1">
-                      To be healthier
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason2" id="reason2">
-                    <label class="form-check-label" for="reason2">
-                      Save money 
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason3" id="reason3">
-                    <label class="form-check-label" for="reason3">
-                      No more hangovers
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason4" id="reason4">
-                    <label class="form-check-label" for="reason4">
-                      Gain self-confidence
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason5" id="reason5">
-                    <label class="form-check-label" for="reason5">
-                      Gain optimism
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason6" id="reason6">
-                    <label class="form-check-label" for="reason6">
-                      You feel better
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason7" id="reason7">
-                    <label class="form-check-label" for="reason7">
-                      Your brain heals
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
-                    <input class="form-check-input reasons-input" type="checkbox" value="reason8" id="reason8">
-                    <label class="form-check-label" for="reason8">
-                      No more guilt over your drinking
-                    </label>
-                  </div>
-                  <div class="form-check reasons-checkbox">
+              <form>
+                <div class="modal-body">
+                  <div class="modal-selection-list">
+                    <div id="reasonsList">
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason1" id="reason1">
+                      <label class="form-check-label" for="reason1">
+                        To be healthier
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason2" id="reason2">
+                      <label class="form-check-label" for="reason2">
+                        Save money 
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason3" id="reason3">
+                      <label class="form-check-label" for="reason3">
+                        No more hangovers
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason4" id="reason4">
+                      <label class="form-check-label" for="reason4">
+                        Gain self-confidence
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason5" id="reason5">
+                      <label class="form-check-label" for="reason5">
+                        Gain optimism
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason6" id="reason6">
+                      <label class="form-check-label" for="reason6">
+                        You feel better
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason7" id="reason7">
+                      <label class="form-check-label" for="reason7">
+                        Your brain heals
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason8" id="reason8">
+                      <label class="form-check-label" for="reason8">
+                        No more guilt over your drinking
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
                       <input class="form-check-input reasons-input" type="checkbox" value="reason9" id="reason9" onclick="selectBtnOption(this.id);"/>
                       <label class="form-check-label" for="reason9">
-                        My own reason
+                          My own reason
                       </label>
-                  </div>
-                  <div id="own-reason-area">                 
-                    <p class="reason-custom-label">Add your own reason:</p>
-                    <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
-                    <div>
-                      <button class="btn btn-primary btn-lg" onclick="addCustomText(document.getElementById('ownReason').value);">Add reason</button>
                     </div>
+                    </div>
+                    <div id="own-reason-area">                 
+                      <p class="reason-custom-label">Add your own reason:</p>
+                      <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
+                      <div>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
+                      </div>
+                    </div>
+                    <hr>
                   </div>
-                  <hr>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn form-btn">Confirm reasons</button>
-              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn form-btn" data-bs-dismiss="modal" onclick="submitFormConfirm(this.form.reasonsOption);">Confirm reasons</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
 
         <div class="double-btn-group">
-          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitForm();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitForm();"></input>
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
         </div>
       </div>
     </div>
@@ -222,8 +219,34 @@
 
       function addCustomText(text) {
         console.log(`custom text= ${text}`);
-
         addReasonDiv(text);
+      }
+
+      function addCustomOption(text) {
+        let parentElement = document.getElementById("reasonsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "reasonsOption";
+        input.type = "checkbox";
+        input.value = "reasonCustomX";
+        input.id = "reasonCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.for = "reasonCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
       }
 
       function addReasonDiv(text) {
@@ -238,6 +261,35 @@
         
         parentElement.appendChild(column);
         column.appendChild(newElement);
+      }
+
+      function clearItems() {
+        let parentElement = document.getElementById("reasons-area-row");
+        let children = parentElement.childNodes;
+
+        while (children.length > 2) {
+          let child = parentElement.lastElementChild;
+          console.log(`child id= ${child.id}`);
+          if (child.id != "addReasonsDiv")
+            parentElement.removeChild(child);
+          else break;
+        }
+      }
+
+      function submitFormConfirm(checkboxObject) {
+
+        clearItems();
+
+        let selectedChoices = null;
+
+        for (var i = 0; i < checkboxObject.length; i++) {
+          console.log(`checkbox ${i} = ${checkboxObject[i].checked}`);
+          if (checkboxObject[i].checked) {
+            let reasonText = checkboxObject[i].nextElementSibling.innerHTML;
+            console.log(`sibling text=${reasonText}`);
+            addReasonDiv(reasonText);
+          }
+        }
       }
 
     </script>
