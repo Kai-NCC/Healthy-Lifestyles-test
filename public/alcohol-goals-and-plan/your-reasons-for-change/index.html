@@ -116,54 +116,54 @@
                 <h4 class="modal-title" id="reasonsModalLabel">Reasons</h4>
                 <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
               </div>
-              <form>
+              <form id="reasonsForm">
                 <div class="modal-body">
                   <div class="modal-selection-list">
                     <div id="reasonsList">
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason1" id="reason1">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="To be healthier" id="reason1">
                       <label class="form-check-label" for="reason1">
                         To be healthier
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason2" id="reason2">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="Save money" id="reason2">
                       <label class="form-check-label" for="reason2">
                         Save money 
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason3" id="reason3">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="No more hangovers" id="reason3">
                       <label class="form-check-label" for="reason3">
                         No more hangovers
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason4" id="reason4">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="Gain self-confidence" id="reason4">
                       <label class="form-check-label" for="reason4">
                         Gain self-confidence
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason5" id="reason5">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="Gain optimism" id="reason5">
                       <label class="form-check-label" for="reason5">
                         Gain optimism
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason6" id="reason6">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="You feel better" id="reason6">
                       <label class="form-check-label" for="reason6">
                         You feel better
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason7" id="reason7">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="Your brain heals" id="reason7">
                       <label class="form-check-label" for="reason7">
                         Your brain heals
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason8" id="reason8">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="No more guilt over your drinking" id="reason8">
                       <label class="form-check-label" for="reason8">
                         No more guilt over your drinking
                       </label>
@@ -195,7 +195,7 @@
 
         <div class="double-btn-group">
           <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue(reasonsForm.reasonsOption);"></input>
         </div>
       </div>
     </div>
@@ -236,7 +236,7 @@
         input.classList.add("reasons-input");
         input.name = "reasonsOption";
         input.type = "checkbox";
-        input.value = "reasonCustomX";
+        input.value = text;
         input.id = "reasonCustomX";
         input.checked = true;
 
@@ -290,6 +290,32 @@
             addReasonDiv(reasonText);
           }
         }
+      }
+
+      function submitFormContinue(reasons) {
+        let reasonsList = [];
+
+        for (var i = 0; i < reasons.length; i++) {
+          if (reasons[i].checked) {
+            text = reasons[i].value;
+            reasonsList.push(text);
+            console.log(`added reason ${text}`);
+          }
+        }
+
+        console.log(`list of reasons= ${reasonsList}`);
+
+        let hour = 1/24;
+        setCookie('reasonsList', reasonsList, hour);
+
+        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/goal-setting";
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
       }
 
     </script>

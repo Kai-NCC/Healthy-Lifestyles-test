@@ -1,0 +1,258 @@
+{% extends "template.njk" %}
+
+{% import "_pattern_macros/navigation_card.njk" as navcard %}
+{% import "_pattern_macros/general_card.njk" as generalcard %}
+
+{% set title = "Goal setting" %}
+
+{% block main %}
+
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-2">
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Care, support and health</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Health and wellbeing</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Healthy lifestyles</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/help-to-cut-back-on-your-drinking/' | url }}">Help to cut back on your drinking</a></li>
+          <li class="breadcrumb-item active">Alcohol goals and plan</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section_stage_theme">
+    <div class="container">
+      <h1 class="h2">Alcohol goals and plan</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="col-12 col-md-9">
+        <h2 class="h3 mb-2">Goal setting</h2>
+        <p>Now think about what it is exactly that you want to change. We've given some examples of broad and specific goals to help you write a goal to suit your needs.</p>
+        
+        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">Broad goals</h3>
+        <ul>
+          <li>Drink less alcohol</li>
+          <li>Stop drinking altogether</li>
+          <li>Have drink-free days</li>
+        </ul>
+
+        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">Specific goals</h3>
+        <ul>
+          <li>Record or monitor what I'm drinking</li>
+          <li>Try low-alcohol alternatives to my usual drinks</li>
+          <li>Lower my drinking at weekends</li>
+          <li>Seek support from a specialist group or individual</li>
+          <li>Replace alcoholic drinks with soft drinks</li>
+          <li>Count my drinks when I'm drinking</li>
+          <li>Find something to distract me at those times when I might have an alcoholic drink</li>
+          <li>Identify the situations, people or settings that lead me to drink more</li>
+          <li>Work out a strategy on how to politely refuse a drink when with friends or family</li>
+        </ul>
+
+        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">My reasons are:</h3>
+        <ul>
+        </ul>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="reasonsModal" tabindex="-1" aria-labelledby="reasonsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="reasonsModalLabel">Reasons</h4>
+                <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
+              </div>
+              <form>
+                <div class="modal-body">
+                  <div class="modal-selection-list">
+                    <div id="reasonsList">
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason1" id="reason1">
+                      <label class="form-check-label" for="reason1">
+                        To be healthier
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason2" id="reason2">
+                      <label class="form-check-label" for="reason2">
+                        Save money 
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason3" id="reason3">
+                      <label class="form-check-label" for="reason3">
+                        No more hangovers
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason4" id="reason4">
+                      <label class="form-check-label" for="reason4">
+                        Gain self-confidence
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason5" id="reason5">
+                      <label class="form-check-label" for="reason5">
+                        Gain optimism
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason6" id="reason6">
+                      <label class="form-check-label" for="reason6">
+                        You feel better
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason7" id="reason7">
+                      <label class="form-check-label" for="reason7">
+                        Your brain heals
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason8" id="reason8">
+                      <label class="form-check-label" for="reason8">
+                        No more guilt over your drinking
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" type="checkbox" value="reason9" id="reason9" onclick="selectBtnOption(this.id);"/>
+                      <label class="form-check-label" for="reason9">
+                          My own reason
+                      </label>
+                    </div>
+                    </div>
+                    <div id="own-reason-area">                 
+                      <p class="reason-custom-label">Add your own reason:</p>
+                      <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
+                      <div>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn form-btn" data-bs-dismiss="modal" onclick="submitFormConfirm(this.form.reasonsOption);">Confirm reasons</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="double-btn-group">
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      
+      window.onload = function() {
+        let reasonsList = document.cookie;
+        console.log(`cookie contents= ${reasonsList}`);
+        let individualReasons = reasonsList.split(',');
+
+        console.log(`reasons list= ${individualReasons}`);
+      }
+
+      function selectBtnOption(btnID) {
+        let button = document.getElementById(btnID);
+        button.classList.toggle("selected");
+  
+        if (btnID == "reason9") {
+          x = document.getElementById("own-reason-area");
+
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+      }
+
+      function addCustomText(text) {
+        console.log(`custom text= ${text}`);
+        addReasonDiv(text);
+      }
+
+      function addCustomOption(text) {
+        let parentElement = document.getElementById("reasonsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "reasonsOption";
+        input.type = "checkbox";
+        input.value = "reasonCustomX";
+        input.id = "reasonCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.for = "reasonCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
+      }
+
+      function addReasonDiv(text) {
+        let parentElement = document.getElementById("reasons-area-row");
+        let column = document.createElement('div');
+        let newElement = document.createElement('div');
+
+        column.classList.add("col-12");
+        column.classList.add("col-md-5");
+        newElement.classList.add("interactive-text-box");
+        newElement.innerHTML = text;
+        
+        parentElement.appendChild(column);
+        column.appendChild(newElement);
+      }
+
+      function clearItems() {
+        let parentElement = document.getElementById("reasons-area-row");
+        let children = parentElement.childNodes;
+
+        while (children.length > 2) {
+          let child = parentElement.lastElementChild;
+          console.log(`child id= ${child.id}`);
+          if (child.id != "addReasonsDiv")
+            parentElement.removeChild(child);
+          else break;
+        }
+      }
+
+      function submitFormConfirm(checkboxObject) {
+
+        clearItems();
+
+        let selectedChoices = null;
+
+        for (var i = 0; i < checkboxObject.length; i++) {
+          console.log(`checkbox ${i} = ${checkboxObject[i].checked}`);
+          if (checkboxObject[i].checked) {
+            let reasonText = checkboxObject[i].nextElementSibling.innerHTML;
+            console.log(`sibling text=${reasonText}`);
+            addReasonDiv(reasonText);
+          }
+        }
+      }
+
+    </script>
+
+  </section>
+{% endblock %}
