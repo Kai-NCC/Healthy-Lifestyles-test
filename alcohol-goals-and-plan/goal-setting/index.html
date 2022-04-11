@@ -116,7 +116,7 @@
         </ul>
 
         <h3 class="h4 mb-2 mt-5" style="font-weight: 700">My reasons are:</h3>
-        <ul>
+        <ul id="reasonsList">
         </ul>
 
 
@@ -216,11 +216,32 @@
     <script>
       
       window.onload = function() {
-        let reasonsList = document.cookie;
-        console.log(`cookie contents= ${reasonsList}`);
-        let individualReasons = reasonsList.split(',');
+        let parentElement = document.getElementById("reasonsList");
+        let reasons = getCookie('reasonsList');
+        let reasonsArray = reasons.split(",");
+        console.log(`cookie contents= ${reasons}`);
+        for (i = 0; i < reasonsArray.length; i++) {
+          console.log(`reason ${i}= ${reasonsArray[i]}`)
+          let item = document.createElement('li');
+          item.innerHTML = reasonsArray[i];
+          parentElement.appendChild(item);
+        }
+      }
 
-        console.log(`reasons list= ${individualReasons}`);
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
       }
 
       function selectBtnOption(btnID) {
