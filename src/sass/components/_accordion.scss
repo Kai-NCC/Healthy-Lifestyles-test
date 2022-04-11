@@ -1,4 +1,33 @@
-.accordion-flush {
+#accordionReasons, #accordionReasonsModal {
+  
+  .accordion-header {
+    .accordion-button {
+      background-color: $gray-200;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: black;
+      padding: 16px 20px;
+      &:focus {
+        box-shadow: none;
+        outline: solid 3px $focus-colour;
+      }
+      &::after {
+        transform: rotate(90deg) scale(1.2);
+      }
+    }
+    .accordion-button.collapsed {
+      color: $gray-600;
+      &:hover {
+        color: black;
+      }
+      &::after {
+        transform: rotate(0deg) scale(1.2);
+      }
+    }
+  }
+}
+
+.accordion-flush{
   .accordion-item {
     background-color: transparent;
     border: none;
@@ -16,7 +45,7 @@
         &::after {
           position: absolute;
           left: 0;
-          transform: rotate(90deg) scale(1.2);
+          transform: rotate(45deg) scale(1.2);
         }
       }
       .accordion-button.collapsed {
@@ -25,7 +54,7 @@
           color: black;
         }
         &::after {
-          transform: rotate(0deg) scale(1.2);
+          transform: rotate(90deg) scale(1.2);
         }
       }
     }

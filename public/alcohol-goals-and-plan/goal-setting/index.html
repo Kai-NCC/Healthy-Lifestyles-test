@@ -115,10 +115,32 @@
           <li>Work out a strategy on how to politely refuse a drink when with friends or family</li>
         </ul>
 
-        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">My reasons are:</h3>
-        <ul id="reasonsList">
-        </ul>
+        <div class="accordion" id="accordionReasons">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSelectedReasons">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                My reasons
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
+              <div class="accordion-body">
+                <ul id="selectedReasonsList">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="row py-4" id="goals-area-row">
+          <div class="col-12 col-md-5" id="addGoalsDiv">
+            <div class="interactive-text-box empty">
+              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                <p class="placeholder-text">Add goal</p>
+              </button>
+            </div>
+          </div>
+        </div>
 
 
         <!-- Modal -->
@@ -126,80 +148,90 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title" id="reasonsModalLabel">Reasons</h4>
+                <h4 class="modal-title" id="reasonsModalLabel">Goals</h4>
                 <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
+              </div>
+              <div class="accordion" id="accordionReasonsModal">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSelectedReasonsModal">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneModal" aria-expanded="true" aria-controls="collapseOneModal">
+                      My reasons
+                    </button>
+                  </h2>
+                  <div id="collapseOneModal" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasonsModal" data-bs-parent="#accordionReasonsModal">
+                    <div class="accordion-body">
+                      <ul id="selectedReasonsListModal">
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
               <form>
                 <div class="modal-body">
                   <div class="modal-selection-list">
-                    <div id="reasonsList">
+                    <div id="goalsList">
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason1" id="reason1">
-                      <label class="form-check-label" for="reason1">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal1" id="goal1">
+                      <label class="form-check-label" for="goal1">
                         To be healthier
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason2" id="reason2">
-                      <label class="form-check-label" for="reason2">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal2" id="goal2">
+                      <label class="form-check-label" for="goal2">
                         Save money 
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason3" id="reason3">
-                      <label class="form-check-label" for="reason3">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal3" id="goal3">
+                      <label class="form-check-label" for="goal3">
                         No more hangovers
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason4" id="reason4">
-                      <label class="form-check-label" for="reason4">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal4" id="goal4">
+                      <label class="form-check-label" for="goal4">
                         Gain self-confidence
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason5" id="reason5">
-                      <label class="form-check-label" for="reason5">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal5" id="goal5">
+                      <label class="form-check-label" for="goal5">
                         Gain optimism
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason6" id="reason6">
-                      <label class="form-check-label" for="reason6">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal6" id="goal6">
+                      <label class="form-check-label" for="goal6">
                         You feel better
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason7" id="reason7">
-                      <label class="form-check-label" for="reason7">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal7" id="goal7">
+                      <label class="form-check-label" for="goal7">
                         Your brain heals
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="reason8" id="reason8">
-                      <label class="form-check-label" for="reason8">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal8" id="goal8">
+                      <label class="form-check-label" for="goal8">
                         No more guilt over your drinking
                       </label>
                     </div>
-                    <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" type="checkbox" value="reason9" id="reason9" onclick="selectBtnOption(this.id);"/>
-                      <label class="form-check-label" for="reason9">
-                          My own reason
-                      </label>
-                    </div>
+
                     </div>
                     <div id="own-reason-area">                 
-                      <p class="reason-custom-label">Add your own reason:</p>
-                      <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
+                      <p class="reason-custom-label">Add your own goal:</p>
+                      <textarea class="selection-textarea" id="ownGoal" name="goal-custom" rows="4" cols="50"></textarea>
                       <div>
-                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownGoal').value);" type="button">Add goal</button>
                       </div>
                     </div>
                     <hr>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn form-btn" data-bs-dismiss="modal" onclick="submitFormConfirm(this.form.reasonsOption);">Confirm reasons</button>
+                  <button type="button" class="btn form-btn" data-bs-dismiss="modal" onclick="submitFormConfirm(this.form.goalOption);">Confirm goals</button>
                 </div>
               </form>
             </div>
@@ -216,15 +248,19 @@
     <script>
       
       window.onload = function() {
-        let parentElement = document.getElementById("reasonsList");
+        let parentElement = document.getElementById("selectedReasonsList");
+        let parentElementModal = document.getElementById("selectedReasonsListModal");
         let reasons = getCookie('reasonsList');
         let reasonsArray = reasons.split(",");
         console.log(`cookie contents= ${reasons}`);
         for (i = 0; i < reasonsArray.length; i++) {
           console.log(`reason ${i}= ${reasonsArray[i]}`)
           let item = document.createElement('li');
+          let item2 = document.createElement('li');
           item.innerHTML = reasonsArray[i];
+          item2.innerHTML = reasonsArray[i];
           parentElement.appendChild(item);
+          parentElementModal.appendChild(item2);
         }
       }
 
@@ -265,7 +301,7 @@
       }
 
       function addCustomOption(text) {
-        let parentElement = document.getElementById("reasonsList");
+        let parentElement = document.getElementById("goalsList");
         let divWrapper = document.createElement('div');
         let input = document.createElement('input');
         let label = document.createElement('label');
@@ -276,14 +312,14 @@
 
         input.classList.add("form-check-input");
         input.classList.add("reasons-input");
-        input.name = "reasonsOption";
+        input.name = "goalOption";
         input.type = "checkbox";
-        input.value = "reasonCustomX";
-        input.id = "reasonCustomX";
+        input.value = "goalsCustomX";
+        input.id = "goalsCustomX";
         input.checked = true;
 
         label.classList.add("form-check-label");       
-        label.for = "reasonCustomX";       
+        label.htmlFor = "goalsCustomX";       
         label.innerHTML = text;       
 
         parentElement.appendChild(divWrapper);
@@ -292,7 +328,7 @@
       }
 
       function addReasonDiv(text) {
-        let parentElement = document.getElementById("reasons-area-row");
+        let parentElement = document.getElementById("goals-area-row");
         let column = document.createElement('div');
         let newElement = document.createElement('div');
 
@@ -306,13 +342,13 @@
       }
 
       function clearItems() {
-        let parentElement = document.getElementById("reasons-area-row");
+        let parentElement = document.getElementById("goals-area-row");
         let children = parentElement.childNodes;
 
         while (children.length > 2) {
           let child = parentElement.lastElementChild;
           console.log(`child id= ${child.id}`);
-          if (child.id != "addReasonsDiv")
+          if (child.id != "addGoalsDiv")
             parentElement.removeChild(child);
           else break;
         }
