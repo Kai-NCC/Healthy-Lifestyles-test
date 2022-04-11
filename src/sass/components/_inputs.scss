@@ -221,8 +221,8 @@
   margin-bottom: 6px;
   width: 100%;
 }
-#own-reason-area {
-  display: none;
+.selection-textarea.error {
+  border: solid $danger 2px;
 }
 .modal-header {
   border: none;

@@ -12568,8 +12568,8 @@ section.section_stage_theme .lead {
   width: 100%;
 }
 
-#own-reason-area {
-  display: none;
+.selection-textarea.error {
+  border: solid #dc3545 2px;
 }
 
 .modal-header {

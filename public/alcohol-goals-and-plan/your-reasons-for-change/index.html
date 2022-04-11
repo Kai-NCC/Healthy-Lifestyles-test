@@ -168,12 +168,6 @@
                         No more guilt over your drinking
                       </label>
                     </div>
-                    <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" type="checkbox" value="reason9" id="reason9" onclick="selectBtnOption(this.id);"/>
-                      <label class="form-check-label" for="reason9">
-                          My own reason
-                      </label>
-                    </div>
                     </div>
                     <div id="own-reason-area">                 
                       <p class="reason-custom-label">Add your own reason:</p>
@@ -217,12 +211,16 @@
         }
       }
 
-      function addCustomText(text) {
-        console.log(`custom text= ${text}`);
-        addReasonDiv(text);
-      }
-
       function addCustomOption(text) {
+        let ownReasonTextArea = document.getElementById("ownReason");
+
+        if (ownReasonTextArea.value === "") {
+          console.log("reasons empty, returning");
+          ownReasonTextArea.classList.add("error");
+          return;
+        }
+        ownReasonTextArea.classList.remove("error");
+
         let parentElement = document.getElementById("reasonsList");
         let divWrapper = document.createElement('div');
         let input = document.createElement('input');
@@ -241,12 +239,14 @@
         input.checked = true;
 
         label.classList.add("form-check-label");       
-        label.for = "reasonCustomX";       
+        label.htmlFor = "reasonCustomX";       
         label.innerHTML = text;       
 
         parentElement.appendChild(divWrapper);
         divWrapper.appendChild(input);
         divWrapper.appendChild(label);
+
+        ownReasonTextArea.value = "";
       }
 
       function addReasonDiv(text) {
