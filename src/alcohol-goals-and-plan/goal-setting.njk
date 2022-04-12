@@ -246,6 +246,15 @@
       }
 
       function addCustomOption(text) {
+        let ownGoalTextArea = document.getElementById("ownGoal");
+
+        if (ownGoalTextArea.value === "") {
+          console.log("reasons empty, returning");
+          ownGoalTextArea.classList.add("error");
+          return;
+        }
+        ownGoalTextArea.classList.remove("error");
+
         let parentElement = document.getElementById("goalsList");
         let divWrapper = document.createElement('div');
         let input = document.createElement('input');
@@ -270,6 +279,8 @@
         parentElement.appendChild(divWrapper);
         divWrapper.appendChild(input);
         divWrapper.appendChild(label);
+
+        ownGoalTextArea.value = "";
       }
 
       function addReasonDiv(text) {
