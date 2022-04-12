@@ -12702,27 +12702,27 @@ section.section_stage_theme .lead {
   padding: 0 0 0 0;
 }
 
-#accordionReasons .accordion-header .accordion-button, #accordionReasonsModal .accordion-header .accordion-button {
+#accordionReasons .accordion-header .accordion-button, #accordionGoals .accordion-header .accordion-button, #accordionReasonsModal .accordion-header .accordion-button {
   background-color: #e9ecef;
   font-weight: 700;
   font-size: 1.25rem;
   color: black;
   padding: 16px 20px;
 }
-#accordionReasons .accordion-header .accordion-button:focus, #accordionReasonsModal .accordion-header .accordion-button:focus {
+#accordionReasons .accordion-header .accordion-button:focus, #accordionGoals .accordion-header .accordion-button:focus, #accordionReasonsModal .accordion-header .accordion-button:focus {
   box-shadow: none;
   outline: solid 3px #ffdd00;
 }
-#accordionReasons .accordion-header .accordion-button::after, #accordionReasonsModal .accordion-header .accordion-button::after {
+#accordionReasons .accordion-header .accordion-button::after, #accordionGoals .accordion-header .accordion-button::after, #accordionReasonsModal .accordion-header .accordion-button::after {
   transform: rotate(90deg) scale(1.2);
 }
-#accordionReasons .accordion-header .accordion-button.collapsed, #accordionReasonsModal .accordion-header .accordion-button.collapsed {
+#accordionReasons .accordion-header .accordion-button.collapsed, #accordionGoals .accordion-header .accordion-button.collapsed, #accordionReasonsModal .accordion-header .accordion-button.collapsed {
   color: #6c757d;
 }
-#accordionReasons .accordion-header .accordion-button.collapsed:hover, #accordionReasonsModal .accordion-header .accordion-button.collapsed:hover {
+#accordionReasons .accordion-header .accordion-button.collapsed:hover, #accordionGoals .accordion-header .accordion-button.collapsed:hover, #accordionReasonsModal .accordion-header .accordion-button.collapsed:hover {
   color: black;
 }
-#accordionReasons .accordion-header .accordion-button.collapsed::after, #accordionReasonsModal .accordion-header .accordion-button.collapsed::after {
+#accordionReasons .accordion-header .accordion-button.collapsed::after, #accordionGoals .accordion-header .accordion-button.collapsed::after, #accordionReasonsModal .accordion-header .accordion-button.collapsed::after {
   transform: rotate(0deg) scale(1.2);
 }
 
