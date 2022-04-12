@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Goal setting - NCC Healthy Lifestyles</title>
+  <title>Making a plan - NCC Healthy Lifestyles</title>
 </head>
 
 
@@ -92,8 +92,9 @@
   <section>
     <div class="container">
       <div class="col-12 col-md-9">
-        <h2 class="h3 mb-2">Goal setting</h2>
-        <p>Now think about what it is exactly that you want to change. We've given some examples of broad and specific goals to help you write a goal to suit your needs.</p>
+        <h2 class="h3 mb-2">Making a plan</h2>
+        <p>If you make a plan this will make reaching your goal much easier.</p>
+        <p>You can set out what you're going to do to achieve your goal. Most action plans set out the details under three headings: 'what', 'where' and 'when'.</p>
         
         <h3 class="h4 mb-2 mt-5" style="font-weight: 700">Broad goals</h3>
         <ul>
@@ -125,6 +126,22 @@
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
               <div class="accordion-body">
                 <ul id="selectedReasonsList">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="accordionGoals">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSelectedGoals">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                My goals
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedGoals" data-bs-parent="#accordionGoals">
+              <div class="accordion-body">
+                <ul id="selectedGoalsList">
                 </ul>
               </div>
             </div>
@@ -166,60 +183,75 @@
                   </div>
                 </div>
               </div>
-              <form id="goalsForm">
+              <div class="accordion" id="accordionGoalsModal">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSelectedGoalsModal">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneModal" aria-expanded="true" aria-controls="collapseOneModal">
+                      My reasons
+                    </button>
+                  </h2>
+                  <div id="collapseOneModal" class="accordion-collapse collapse show" aria-labelledby="headingSelectedGoalsModal" data-bs-parent="#accordionGoalsModal">
+                    <div class="accordion-body">
+                      <ul id="selectedGoalsListModal">
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <form>
                 <div class="modal-body">
                   <div class="modal-selection-list">
                     <div id="goalsList">
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Record or monitor what I'm drinking" id="goal1">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal1" id="goal1">
                       <label class="form-check-label" for="goal1">
                         Record or monitor what I'm drinking
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Try low-alcohol alternatives to my usual drinks" id="goal2">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal2" id="goal2">
                       <label class="form-check-label" for="goal2">
                         Try low-alcohol alternatives to my usual drinks
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Lower my drinking at weekends" id="goal3">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal3" id="goal3">
                       <label class="form-check-label" for="goal3">
                         Lower my drinking at weekends
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Seek support from a specialist group or individual" id="goal4">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal4" id="goal4">
                       <label class="form-check-label" for="goal4">
                         Seek support from a specialist group or individual
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Replace alcoholic drinks with soft drinks" id="goal5">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal5" id="goal5">
                       <label class="form-check-label" for="goal5">
                         Replace alcoholic drinks with soft drinks
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Count my drinks when I'm drinking" id="goal6">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal6" id="goal6">
                       <label class="form-check-label" for="goal6">
                         Count my drinks when I'm drinking
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Find something to distract me at those times when I might have an alcoholic drink" id="goal7">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal7" id="goal7">
                       <label class="form-check-label" for="goal7">
                         Find something to distract me at those times when I might have an alcoholic drink
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Identify the situations‚ people or settings that lead me to drink more" id="goal8">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal8" id="goal8">
                       <label class="form-check-label" for="goal8">
-                        Identify the situations‚ people or settings that lead me to drink more
+                        Identify the situations, people or settings that lead me to drink more
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Work out a strategy on how to politely refuse a drink when with friends or family" id="goal9">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal9" id="goal9">
                       <label class="form-check-label" for="goal9">
                         Work out a strategy on how to politely refuse a drink when with friends or family
                       </label>
@@ -246,7 +278,7 @@
 
         <div class="double-btn-group">
           <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue(goalsForm.goalOption);"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
         </div>
       </div>
     </div>
@@ -255,10 +287,18 @@
       
       window.onload = function() {
         let parentElement = document.getElementById("selectedReasonsList");
+        let parentElement2 = document.getElementById("selectedGoalsList");
         let parentElementModal = document.getElementById("selectedReasonsListModal");
+        let parentElement2Modal = document.getElementById("selectedGoalsListModal");
+
         let reasons = getCookie('reasonsList');
+        let goals = getCookie('goalsList');
         let reasonsArray = reasons.split(",");
-        console.log(`cookie contents= ${reasons}`);
+        let goalsArray = goals.split(",");
+
+        console.log(`cookie contents(reasons)= ${reasons}`);
+        console.log(`cookie contents(goals)= ${goals}`);
+
         for (i = 0; i < reasonsArray.length; i++) {
           console.log(`reason ${i}= ${reasonsArray[i]}`)
           let item = document.createElement('li');
@@ -267,6 +307,16 @@
           item2.innerHTML = reasonsArray[i];
           parentElement.appendChild(item);
           parentElementModal.appendChild(item2);
+        }
+
+        for (i = 0; i < goalsArray.length; i++) {
+          console.log(`goal ${i}= ${goalsArray[i]}`)
+          let item = document.createElement('li');
+          let item2 = document.createElement('li');
+          item.innerHTML = goalsArray[i];
+          item2.innerHTML = goalsArray[i];
+          parentElement2.appendChild(item);
+          parentElement2Modal.appendChild(item2);
         }
       }
 
@@ -329,7 +379,7 @@
         input.classList.add("reasons-input");
         input.name = "goalOption";
         input.type = "checkbox";
-        input.value = text;
+        input.value = "goalsCustomX";
         input.id = "goalsCustomX";
         input.checked = true;
 
@@ -385,32 +435,6 @@
             addReasonDiv(reasonText);
           }
         }
-      }
-
-      function submitFormContinue(goals) {
-        let goalsList = [];
-
-        for (var i = 0; i < goals.length; i++) {
-          if (goals[i].checked) {
-            text = goals[i].value;
-            goalsList.push(text);
-            console.log(`added goal ${text}`);
-          }
-        }
-
-        console.log(`list of reasons= ${goalsList}`);
-
-        let hour = 1/24;
-        setCookie('goalsList', goalsList, hour);
-
-        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/making-a-plan";
-      }
-
-      function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
       }
 
     </script>

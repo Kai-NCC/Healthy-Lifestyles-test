@@ -105,60 +105,60 @@
                   </div>
                 </div>
               </div>
-              <form>
+              <form id="goalsForm">
                 <div class="modal-body">
                   <div class="modal-selection-list">
                     <div id="goalsList">
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal1" id="goal1">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Record or monitor what I'm drinking" id="goal1">
                       <label class="form-check-label" for="goal1">
                         Record or monitor what I'm drinking
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal2" id="goal2">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Try low-alcohol alternatives to my usual drinks" id="goal2">
                       <label class="form-check-label" for="goal2">
                         Try low-alcohol alternatives to my usual drinks
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal3" id="goal3">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Lower my drinking at weekends" id="goal3">
                       <label class="form-check-label" for="goal3">
                         Lower my drinking at weekends
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal4" id="goal4">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Seek support from a specialist group or individual" id="goal4">
                       <label class="form-check-label" for="goal4">
                         Seek support from a specialist group or individual
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal5" id="goal5">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Replace alcoholic drinks with soft drinks" id="goal5">
                       <label class="form-check-label" for="goal5">
                         Replace alcoholic drinks with soft drinks
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal6" id="goal6">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Count my drinks when I'm drinking" id="goal6">
                       <label class="form-check-label" for="goal6">
                         Count my drinks when I'm drinking
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal7" id="goal7">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Find something to distract me at those times when I might have an alcoholic drink" id="goal7">
                       <label class="form-check-label" for="goal7">
                         Find something to distract me at those times when I might have an alcoholic drink
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal8" id="goal8">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Identify the situations‚ people or settings that lead me to drink more" id="goal8">
                       <label class="form-check-label" for="goal8">
-                        Identify the situations, people or settings that lead me to drink more
+                        Identify the situations‚ people or settings that lead me to drink more
                       </label>
                     </div>
                     <div class="form-check reasons-checkbox">
-                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="goal9" id="goal9">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Work out a strategy on how to politely refuse a drink when with friends or family" id="goal9">
                       <label class="form-check-label" for="goal9">
                         Work out a strategy on how to politely refuse a drink when with friends or family
                       </label>
@@ -185,7 +185,7 @@
 
         <div class="double-btn-group">
           <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue(goalsForm.goalOption);"></input>
         </div>
       </div>
     </div>
@@ -268,7 +268,7 @@
         input.classList.add("reasons-input");
         input.name = "goalOption";
         input.type = "checkbox";
-        input.value = "goalsCustomX";
+        input.value = text;
         input.id = "goalsCustomX";
         input.checked = true;
 
@@ -324,6 +324,32 @@
             addReasonDiv(reasonText);
           }
         }
+      }
+
+      function submitFormContinue(goals) {
+        let goalsList = [];
+
+        for (var i = 0; i < goals.length; i++) {
+          if (goals[i].checked) {
+            text = goals[i].value;
+            goalsList.push(text);
+            console.log(`added goal ${text}`);
+          }
+        }
+
+        console.log(`list of reasons= ${goalsList}`);
+
+        let hour = 1/24;
+        setCookie('goalsList', goalsList, hour);
+
+        window.location.href = "{{ '/alcohol-goals-and-plan/making-a-plan' | url }}";
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
       }
 
     </script>
