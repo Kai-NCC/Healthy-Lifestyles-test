@@ -276,6 +276,14 @@
     }
   }
 }
+.action-plan-btn {
+  @include media-breakpoint-down(md) {
+    margin-top: -20px;
+  }
+  margin-bottom: 20px;
+  float: right;
+}
+
 // .custom-reason-checkbox {
 //   input.reasons-input {
 //     &:checked {
