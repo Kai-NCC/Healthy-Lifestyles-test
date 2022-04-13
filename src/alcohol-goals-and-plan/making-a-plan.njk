@@ -184,7 +184,11 @@
         column.appendChild(newElement);
       }
       function addGoalDivWithPlan(text) {
-        encodedID = btoa(text);
+        /* encodedID = btoa(text);
+
+        console.log(`encoded text = ${encodedID}`) */
+
+        encodedID = btoa(unescape(encodeURIComponent(text)));
 
         let parentElement = document.getElementById("goals-area-row");
         let column = document.createElement('div');
@@ -209,6 +213,7 @@
 
         parentElement.appendChild(column);
         column.appendChild(newElement);
+        createActionPlanDiv(column);
         column.appendChild(newButton);
       }
 
@@ -231,9 +236,13 @@
 
         if (actionBox.classList.contains("actionbox-active")) {
           actionBox.classList.remove("actionbox-active");
+          actionBox.nextElementSibling.classList.remove("actionbox-active");
         } else {
           actionBox.classList.add("actionbox-active");
-        }        
+          actionBox.nextElementSibling.classList.add("actionbox-active");
+        }
+
+
       }
 
       function submitFormConfirm(checkboxObject) {
@@ -250,6 +259,21 @@
             addReasonDiv(reasonText);
           }
         }
+      }
+
+      function createActionPlanDiv(parentColumn) {
+        let actionPlanDiv = document.createElement('div');
+        actionPlanDiv.classList.add("action-plan-area");
+        actionPlanDiv.innerHTML = `
+          <h4>Action plan</h4>
+          <h5 class="h6">When</h5>
+          <input class="form-control mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
+          <h5 class="h6">Where (setting or environment)</h5>
+          <input class="form-control mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
+          <h5 class="h6">What</h5>
+          <input class="form-control mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
+        `;
+        parentColumn.appendChild(actionPlanDiv);
       }
 
     </script>
