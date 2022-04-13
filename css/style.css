@@ -12647,6 +12647,11 @@ section.section_stage_theme .lead {
   }
 }
 
+.actionbox-active {
+  border-color: #1C995D;
+  background-color: #34c57f4d;
+}
+
 .breadcrumbs {
   background-color: #ced4da;
   padding: 8px 0px;
