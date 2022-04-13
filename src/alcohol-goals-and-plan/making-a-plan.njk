@@ -184,6 +184,8 @@
         column.appendChild(newElement);
       }
       function addGoalDivWithPlan(text) {
+        encodedID = btoa(text);
+
         let parentElement = document.getElementById("goals-area-row");
         let column = document.createElement('div');
         let newElement = document.createElement('div');
@@ -193,11 +195,14 @@
         column.classList.add("col-md-5");
         newElement.classList.add("interactive-text-box");
         newElement.innerHTML = text;
+        newElement.id = `actionbox-${encodedID}`;
         
         newButton.classList.add("btn");
         newButton.classList.add("btn-success");
         newButton.classList.add("btn-lg");
         newButton.classList.add("action-plan-btn");
+        newButton.id = `actionplanbtn-${encodedID}`;
+        newButton.onclick = function() { addActionPlan(newButton.id); };
         newButton.type = "button";
         newButton.innerHTML = "Add action plan";
 
@@ -218,6 +223,17 @@
             parentElement.removeChild(child);
           else break;
         }
+      }
+
+      function addActionPlan(btn) {
+        const idString = btn.split("-");
+        let actionBox = document.getElementById(`actionbox-${idString[1]}`);
+
+        if (actionBox.classList.contains("actionbox-active")) {
+          actionBox.classList.remove("actionbox-active");
+        } else {
+          actionBox.classList.add("actionbox-active");
+        }        
       }
 
       function submitFormConfirm(checkboxObject) {
