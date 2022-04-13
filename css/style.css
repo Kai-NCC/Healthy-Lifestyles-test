@@ -12649,7 +12649,24 @@ section.section_stage_theme .lead {
 
 .actionbox-active {
   border-color: #1C995D;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+
+.action-plan-area {
+  border-bottom: solid #1C995D 2px;
+  border-left: solid #1C995D 2px;
+  border-right: solid #1C995D 2px;
+  border-radius: 0 0 0 10px;
+  padding: 16px;
   background-color: #34c57f4d;
+  display: none;
+  margin-bottom: 20px;
+}
+
+.action-plan-area.actionbox-active {
+  display: flex;
+  flex-direction: column;
 }
 
 .breadcrumbs {
