@@ -135,6 +135,37 @@
 
     <script>
       
+      window.onload = function() {
+        let parentElementModal = document.getElementById("reasonsList");
+        let childInputs = parentElementModal.children;
+        let reasons = getCookie('reasonsList');
+        let reasonsArray = reasons.split(",");
+        console.log(`cookie contents= ${reasons}`);
+
+        let reasonsForm = document.getElementById("reasonsForm");
+
+        for (var i = 0; i < reasonsForm.length; i++) {
+          console.log(`checkbox ${i} = ${reasonsForm[i].value}`);
+        }
+        
+        for (i = 0; i < reasonsArray.length; i++) {
+          let defaultReason = false;
+          console.log(`analysing option ${reasonsArray[i]}`);
+          for (j = 0; j < reasonsForm.length; j++) {
+            if (reasonsForm[j].value == reasonsArray[i]) {
+              console.log(`input value ${reasonsForm[j].value} == ${reasonsArray[i]}, checked`);
+              reasonsForm[j].checked = true;
+              defaultReason = true;
+            }
+          }
+          if (!defaultReason) {
+            console.log(`adding custom option ${reasonsArray[i]}`);
+            replaceCustomOption(reasonsArray[i]);
+          }
+          addReasonDiv(reasonsArray[i]);
+        }
+      }
+
       function selectBtnOption(btnID) {
         let button = document.getElementById(btnID);
         button.classList.toggle("selected");
@@ -148,6 +179,37 @@
             x.style.display = "block";
           }
         }
+      }
+
+      function replaceCustomOption(text) {
+        let ownReasonTextArea = document.getElementById("ownReason");
+
+        let parentElement = document.getElementById("reasonsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "reasonsOption";
+        input.type = "checkbox";
+        input.value = text;
+        input.id = "reasonCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.htmlFor = "reasonCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
+
+        ownReasonTextArea.value = "";
       }
 
       function addCustomOption(text) {
@@ -255,6 +317,22 @@
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         let expires = "expires="+ d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
       }
 
     </script>

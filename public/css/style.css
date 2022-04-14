@@ -12644,6 +12644,11 @@ section.section_stage_theme .lead {
   border: solid #1C995D 3px;
 }
 
+.testclassforinputs {
+  color: red;
+  background-color: aqua;
+}
+
 .action-plan-btn {
   margin-bottom: 20px;
   float: right;
