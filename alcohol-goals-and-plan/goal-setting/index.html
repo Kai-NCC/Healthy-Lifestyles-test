@@ -268,6 +268,27 @@
           parentElement.appendChild(item);
           parentElementModal.appendChild(item2);
         }
+
+        let goals = getCookie('goalsList');
+        let goalsArray = goals.split(",");
+        let goalsForm = document.getElementById("goalsForm");
+
+        for (i = 0; i < goalsArray.length; i++) {
+          let defaultGoal = false;
+          console.log(`analysing option ${goalsArray[i]}`);
+          for (j = 0; j < goalsForm.length; j++) {
+            if (goalsForm[j].value == goalsArray[i]) {
+              console.log(`input value ${goalsForm[j].value} == ${goalsForm[i]}, checked`);
+              goalsForm[j].checked = true;
+              defaultGoal = true;
+            }
+          }
+          if (!defaultGoal) {
+            console.log(`adding custom option ${goalsArray[i]}`);
+            replaceCustomOption(goalsArray[i]);
+          }
+          addReasonDiv(goalsArray[i]);
+        }
       }
 
       function getCookie(cname) {
@@ -315,6 +336,37 @@
           return;
         }
         ownGoalTextArea.classList.remove("error");
+
+        let parentElement = document.getElementById("goalsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "goalOption";
+        input.type = "checkbox";
+        input.value = text;
+        input.id = "goalsCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.htmlFor = "goalsCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
+
+        ownGoalTextArea.value = "";
+      }
+
+      function replaceCustomOption(text) {
+        let ownGoalTextArea = document.getElementById("ownGoal");
 
         let parentElement = document.getElementById("goalsList");
         let divWrapper = document.createElement('div');
