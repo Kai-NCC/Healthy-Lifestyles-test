@@ -12367,6 +12367,13 @@ section.section_stage_theme .lead {
   filter: none;
 }
 
+.form-text:focus {
+  transition: none;
+  border-color: #ffdd00;
+  outline: solid 4px #ffdd00;
+  box-shadow: none;
+}
+
 .form-btn {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #1C995D;

@@ -58,6 +58,14 @@
     }
   }
 }
+.form-text {
+  &:focus {
+    transition: none;
+    border-color: $focus-colour;
+    outline: solid 4px $focus-colour;
+    box-shadow: none;
+  }
+}
 .form-btn {
   @include ani;
   background-color: #1C995D;
