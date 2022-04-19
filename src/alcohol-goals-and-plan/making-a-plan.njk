@@ -84,6 +84,12 @@
         let reasonsArray = reasons.split(",");
         let goalsArray = goals.split(",");
 
+        if (reasons === '' && goals === '') {
+          console.log(`cookies empty, returning`);
+          alert(`You have not added any goals. Please go back to the previous page before continuing.`)
+          return;
+        }
+
         console.log(`cookie contents(reasons)= ${reasons}`);
         console.log(`cookie contents(goals)= ${goals}`);
 

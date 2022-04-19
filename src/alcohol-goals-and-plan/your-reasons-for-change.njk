@@ -139,6 +139,10 @@
         let parentElementModal = document.getElementById("reasonsList");
         let childInputs = parentElementModal.children;
         let reasons = getCookie('reasonsList');
+        if (reasons === '') {
+          console.log(`cookie empty, returning`);
+          return;
+        }
         let reasonsArray = reasons.split(",");
         console.log(`cookie contents= ${reasons}`);
 
