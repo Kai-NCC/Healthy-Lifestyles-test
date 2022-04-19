@@ -196,10 +196,7 @@
         let parentElement = document.getElementById("selectedReasonsList");
         let parentElementModal = document.getElementById("selectedReasonsListModal");
         let reasons = getCookie('reasonsList');
-        if (reasons === '') {
-          console.log(`cookie empty, returning`);
-          return;
-        }
+        
         let reasonsArray = reasons.split(",");
         console.log(`cookie contents= ${reasons}`);
         for (i = 0; i < reasonsArray.length; i++) {
@@ -215,6 +212,11 @@
         let goals = getCookie('goalsList');
         let goalsArray = goals.split(",");
         let goalsForm = document.getElementById("goalsForm");
+
+        if (goals === '') {
+          console.log(`cookie empty, returning`);
+          return;
+        }
 
         for (i = 0; i < goalsArray.length; i++) {
           let defaultGoal = false;
