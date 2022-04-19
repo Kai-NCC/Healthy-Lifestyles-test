@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Making a plan - NCC Healthy Lifestyles</title>
+  <title>Next steps - NCC Healthy Lifestyles</title>
 </head>
 
 
@@ -92,45 +92,9 @@
   <section>
     <div class="container">
       <div class="col-12 col-md-9">
-        <h2 class="h3 mb-2">Making a plan</h2>
-        <p>If you make a plan this will make reaching your goal much easier.</p>
-        <p>You can set out what you're going to do to achieve your goal. Most action plans set out the details under three headings: 'what', 'where' and 'when'.</p>
-        
-        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">We've provided some examples to show you</h3>
-        <ul>
-          <li>Goal - "Try out a low alcohol alternative to your usual drink"</li>
-          <li>Action plan - "When I go shopping at the supermarket on Wednesday evening I will buy some lower alcoholic drinks to have at home instead of my usual brand.</li>
-          <li>Goal - "Replace alternate alcoholic drinks with a soft drink"</li>
-          <li>Action plan - "When I meet Alice and Bob in the pub garden on a Monday after work I will follow my first alcoholic drink with a glass of lemonade (and say I am thirsty)."</li>
-        </ul>
-
-        <div class="accordion" id="accordionReasons">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSelectedReasons">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                My reasons
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
-              <div class="accordion-body">
-                <ul id="selectedReasonsList">
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row py-4" id="goals-area-row">
-        </div>
-
-        <p>
-          Your reasons for change and goals are ready, finally add action plans to your goals to help you achieve them.
-        </p>
-
-        <div class="double-btn-group">
-          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
-        </div>
+        <h2 class="h3 mb-2">Next steps</h2>
+        <p>You may now want to look at potential obstacles you may face in achieving your goal and how to overcome them. Go to <a href="/Healthy-Lifestyles-test/public/">Overcoming barriers and finding solutions</a> page.</p>
+        <p>This form is part of a new service we are developing. If you have five minutes to spare, we would be grateful if you could fill in a survey about this form. If you would like to download a copy of your plan, click the 'Download PDF' button bellow.</p>
       </div>
     </div>
 
@@ -339,14 +303,6 @@
           <input class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
         `;
         parentColumn.appendChild(actionPlanDiv);
-      }
-
-      function submitFormContinue(goals) {
-        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/summary";
-      }
-
-      function submitFormBack() {
-        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/goal-setting";
       }
 
     </script>
