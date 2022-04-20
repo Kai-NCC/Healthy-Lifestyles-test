@@ -117,3 +117,18 @@ p code {
     }
   }
 }
+.download-wrapper {
+  background-color: #006666;
+  height: 200px;
+  padding: 0;
+  display: none;
+  @include media-breakpoint-down(md) {
+    display: block;
+  }  
+ .container {
+   height: calc(100% + 10px);
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+ }
+}
