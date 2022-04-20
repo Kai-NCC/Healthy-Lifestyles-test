@@ -12433,6 +12433,17 @@ section.section_stage_theme .lead {
   }
 }
 
+.download-btn svg {
+  margin-right: 10px;
+}
+.download-btn:focus {
+  border: solid #0b0c0c 3px;
+  outline: none;
+}
+.download-btn:focus svg path {
+  fill: #0b0c0c;
+}
+
 .question-number {
   margin-bottom: 5px;
   color: #6c757d;
@@ -12919,6 +12930,24 @@ p code {
 }
 .back-to-top:focus svg path {
   fill: #0b0c0c;
+}
+
+.download-wrapper {
+  background-color: #006666;
+  height: 200px;
+  padding: 0;
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .download-wrapper {
+    display: block;
+  }
+}
+.download-wrapper .container {
+  height: calc(100% + 10px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
