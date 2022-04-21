@@ -349,7 +349,15 @@
       }
 
       function clearActionPlan(btn) {
-        
+        const idString = btn.split("-");
+
+        let inputField1 = document.getElementById(`actionbox-${idString[2]}-input-1`);
+        let inputField2 = document.getElementById(`actionbox-${idString[2]}-input-2`);
+        let inputField3 = document.getElementById(`actionbox-${idString[2]}-input-3`);
+
+        inputField1.value = "";
+        inputField2.value = "";
+        inputField3.value = "";
       }
 
       function submitFormConfirm(checkboxObject) {
