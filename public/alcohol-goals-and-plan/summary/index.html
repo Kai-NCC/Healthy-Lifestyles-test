@@ -92,33 +92,31 @@
   <section>
     <div class="container">
       <div class="col-12 col-md-9">
-        <h2 class="h3 mb-2">Keep a reminder of your goal and plan</h2>
-        <p>Putting positive reminders of your goals in place is another heplful way to make sure you stay on track. Here are some examples:</p>
-        <p>Use an alcohol tracker or diary. Keep it on your bedside table so it acts as a reminder at the start and end of each day. You could also keep it in your kitchen so you see it each time you go in.</p>
-        <p>Remove all alcoholic drinks from where you usually keep them. Replace these with alcohol free options.</p>
-        <p>Put up several reminders in places you regularly use: in your car or at your workplace and home.</p>
-        <p>We can email you your goals and plans to act as a reminder. We will only use your email for this project and not for any other marketing or promotional purposes.</p>
-      </div>
-    </div>
-  </section>
-  <section class="download-wrapper">
-    <div class="container">
-      <button type="button" class="btn btn-lg form-btn download-btn" id="download" onclick=""><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.5H14V15.5H0V17.5ZM14 6.5H10V0.5H4V6.5H0L7 13.5L14 6.5Z" fill="white"/></svg>Download plan</button>
-    </div>
-  </section>
-  <section>
-    <div class="container">
+        <h2 class="h3 mb-2">Summary</h2>
 
-      <div class="form-check pb-4 pt-4" id="emailCheckForm">
-        <input class="form-check-input" type="checkbox" name="emailCheckForm" value="emailAnswer" id="emailCheckbox">
-        <label class="form-check-label" for="emailCheckbox">
-          Would you like to receive your goal and plan as an email?
-        </label>
-      </div>
+        <div class="accordion" id="accordionReasons">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSelectedReasons">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                My reasons
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
+              <div class="accordion-body">
+                <ul id="selectedReasonsList">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="double-btn-group">
-        <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-        <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+        <div class="row py-4" id="goals-area-row">
+        </div>
+
+        <div class="double-btn-group">
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+        </div>
       </div>
     </div>
 
@@ -132,6 +130,12 @@
         let goals = getCookie('goalsList');
         let reasonsArray = reasons.split(",");
         let goalsArray = goals.split(",");
+
+        if (goals === '') {
+          console.log(`cookies empty, returning`);
+          alert(`You have not added any goals. Please go back to the previous page before continuing.`)
+          return;
+        }
 
         console.log(`cookie contents(reasons)= ${reasons}`);
         console.log(`cookie contents(goals)= ${goals}`);
@@ -246,7 +250,8 @@
         let parentElement = document.getElementById("goals-area-row");
         let column = document.createElement('div');
         let newElement = document.createElement('div');
-        let newButton = document.createElement('button');
+        let newButtonAdd = document.createElement('button');
+        let newButtonClear = document.createElement('button');
 
         column.classList.add("col-12");
         column.classList.add("col-md-5");
@@ -254,20 +259,31 @@
         newElement.innerHTML = text;
         newElement.id = `actionbox-${encodedID}`;
         
-        newButton.classList.add("btn");
-        newButton.classList.add("btn-success");
-        newButton.classList.add("btn-lg");
-        newButton.classList.add("action-plan-btn");
-        newButton.id = `actionplanbtn-${encodedID}`;
-        newButton.onclick = function() { addActionPlan(newButton.id); };
-        newButton.type = "button";
-        newButton.innerHTML = "Add action plan";
+        newButtonAdd.classList.add("btn");
+        newButtonAdd.classList.add("btn-success");
+        newButtonAdd.classList.add("btn-lg");
+        newButtonAdd.classList.add("action-plan-btn");
+        newButtonAdd.id = `actionplanbtn-${encodedID}`;
+        newButtonAdd.onclick = function() { addActionPlan(newButtonAdd.id); };
+        newButtonAdd.type = "button";
+        newButtonAdd.innerHTML = "Add action plan";
+
+        newButtonClear.classList.add("btn");
+        newButtonClear.classList.add("btn-danger");
+        newButtonClear.classList.add("btn-lg");
+        newButtonClear.classList.add("action-plan-btn");
+        newButtonClear.classList.add("action-plan-btn-clear");
+        newButtonClear.id = `actionplanbtn-clear-${encodedID}`;
+        newButtonClear.onclick = function() { clearActionPlan(newButtonClear.id); };
+        newButtonClear.type = "button";
+        newButtonClear.innerHTML = "Clear action plan";
 
 
         parentElement.appendChild(column);
         column.appendChild(newElement);
-        createActionPlanDiv(column);
-        column.appendChild(newButton);
+        createActionPlanDiv(column, `actionbox-${encodedID}-input`);
+        column.appendChild(newButtonAdd);
+        column.appendChild(newButtonClear);
       }
 
       function clearItems() {
@@ -285,17 +301,49 @@
 
       function addActionPlan(btn) {
         const idString = btn.split("-");
+        let button = document.getElementById(btn);
+        let editButton = document.getElementById(`actionplanbtn-clear-${idString[1]}`);
         let actionBox = document.getElementById(`actionbox-${idString[1]}`);
+
+        let inputField1 = document.getElementById(`actionbox-${idString[1]}-input-1`);
+        let inputField2 = document.getElementById(`actionbox-${idString[1]}-input-2`);
+        let inputField3 = document.getElementById(`actionbox-${idString[1]}-input-3`);
+
+        if (!editButton.classList.contains("action-plan-btn-clear-show")) {
+          editButton.classList.add("action-plan-btn-clear-show");
+        }
 
         if (actionBox.classList.contains("actionbox-active")) {
           actionBox.classList.remove("actionbox-active");
+          actionBox.classList.add("actionbox-saved");
           actionBox.nextElementSibling.classList.remove("actionbox-active");
+          actionBox.nextElementSibling.classList.add("actionbox-saved");
+          button.innerHTML = "Edit action plan";
+          inputField1.disabled = true;
+          inputField2.disabled = true;
+          inputField3.disabled = true;
         } else {
           actionBox.classList.add("actionbox-active");
+          actionBox.classList.remove("actionbox-saved");
           actionBox.nextElementSibling.classList.add("actionbox-active");
+          actionBox.nextElementSibling.classList.remove("actionbox-saved");
+          button.innerHTML = "Save action plan";
+          inputField1.disabled = false;
+          inputField2.disabled = false;
+          inputField3.disabled = false;
         }
+      }
 
+      function clearActionPlan(btn) {
+        const idString = btn.split("-");
 
+        let inputField1 = document.getElementById(`actionbox-${idString[2]}-input-1`);
+        let inputField2 = document.getElementById(`actionbox-${idString[2]}-input-2`);
+        let inputField3 = document.getElementById(`actionbox-${idString[2]}-input-3`);
+
+        inputField1.value = "";
+        inputField2.value = "";
+        inputField3.value = "";
       }
 
       function submitFormConfirm(checkboxObject) {
@@ -314,23 +362,23 @@
         }
       }
 
-      function createActionPlanDiv(parentColumn) {
+      function createActionPlanDiv(parentColumn, inputID) {
         let actionPlanDiv = document.createElement('div');
         actionPlanDiv.classList.add("action-plan-area");
         actionPlanDiv.innerHTML = `
           <h4>Action plan</h4>
           <h5 class="h6">When</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
+          <input id="${inputID}-1" class="form-control form-text mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
           <h5 class="h6">Where (setting or environment)</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
+          <input id="${inputID}-2" class="form-control form-text mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
           <h5 class="h6">What</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
+          <input id="${inputID}-3" class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
         `;
         parentColumn.appendChild(actionPlanDiv);
       }
 
-      function submitFormContinue() {
-        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/next-steps";
+      function submitFormContinue(goals) {
+        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/keep-a-reminder";
       }
 
       function submitFormBack() {
