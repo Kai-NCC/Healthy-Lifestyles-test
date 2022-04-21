@@ -12670,6 +12670,21 @@ section.section_stage_theme .lead {
   }
 }
 
+.action-plan-btn-clear {
+  margin-bottom: 20px;
+  float: left;
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .action-plan-btn-clear {
+    margin-top: -20px;
+  }
+}
+
+.action-plan-btn-clear-show {
+  display: block;
+}
+
 .actionbox-active {
   border-color: #1C995D;
   border-radius: 10px 10px 0 0;

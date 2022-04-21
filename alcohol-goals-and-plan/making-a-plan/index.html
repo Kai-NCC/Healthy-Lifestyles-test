@@ -264,7 +264,8 @@
         let parentElement = document.getElementById("goals-area-row");
         let column = document.createElement('div');
         let newElement = document.createElement('div');
-        let newButton = document.createElement('button');
+        let newButtonAdd = document.createElement('button');
+        let newButtonClear = document.createElement('button');
 
         column.classList.add("col-12");
         column.classList.add("col-md-5");
@@ -272,20 +273,31 @@
         newElement.innerHTML = text;
         newElement.id = `actionbox-${encodedID}`;
         
-        newButton.classList.add("btn");
-        newButton.classList.add("btn-success");
-        newButton.classList.add("btn-lg");
-        newButton.classList.add("action-plan-btn");
-        newButton.id = `actionplanbtn-${encodedID}`;
-        newButton.onclick = function() { addActionPlan(newButton.id); };
-        newButton.type = "button";
-        newButton.innerHTML = "Add action plan";
+        newButtonAdd.classList.add("btn");
+        newButtonAdd.classList.add("btn-success");
+        newButtonAdd.classList.add("btn-lg");
+        newButtonAdd.classList.add("action-plan-btn");
+        newButtonAdd.id = `actionplanbtn-${encodedID}`;
+        newButtonAdd.onclick = function() { addActionPlan(newButtonAdd.id); };
+        newButtonAdd.type = "button";
+        newButtonAdd.innerHTML = "Add action plan";
+
+        newButtonClear.classList.add("btn");
+        newButtonClear.classList.add("btn-danger");
+        newButtonClear.classList.add("btn-lg");
+        newButtonClear.classList.add("action-plan-btn");
+        newButtonClear.classList.add("action-plan-btn-clear");
+        newButtonClear.id = `actionplanbtn-clear-${encodedID}`;
+        newButtonClear.onclick = function() { clearActionPlan(newButtonClear.id); };
+        newButtonClear.type = "button";
+        newButtonClear.innerHTML = "Clear action plan";
 
 
         parentElement.appendChild(column);
         column.appendChild(newElement);
         createActionPlanDiv(column, `actionbox-${encodedID}-input`);
-        column.appendChild(newButton);
+        column.appendChild(newButtonAdd);
+        column.appendChild(newButtonClear);
       }
 
       function clearItems() {
@@ -302,13 +314,18 @@
       }
 
       function addActionPlan(btn) {
-        let button = document.getElementById(btn);
         const idString = btn.split("-");
+        let button = document.getElementById(btn);
+        let editButton = document.getElementById(`actionplanbtn-clear-${idString[1]}`);
         let actionBox = document.getElementById(`actionbox-${idString[1]}`);
 
         let inputField1 = document.getElementById(`actionbox-${idString[1]}-input-1`);
         let inputField2 = document.getElementById(`actionbox-${idString[1]}-input-2`);
         let inputField3 = document.getElementById(`actionbox-${idString[1]}-input-3`);
+
+        if (!editButton.classList.contains("action-plan-btn-clear-show")) {
+          editButton.classList.add("action-plan-btn-clear-show");
+        }
 
         if (actionBox.classList.contains("actionbox-active")) {
           actionBox.classList.remove("actionbox-active");
@@ -329,6 +346,10 @@
           inputField2.disabled = false;
           inputField3.disabled = false;
         }
+      }
+
+      function clearActionPlan(btn) {
+        
       }
 
       function submitFormConfirm(checkboxObject) {
