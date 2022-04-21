@@ -307,6 +307,17 @@
   margin-bottom: 20px;
   float: right;
 }
+.action-plan-btn-clear {
+  @include media-breakpoint-down(md) {
+    margin-top: -20px;
+  }
+  margin-bottom: 20px;
+  float: left;
+  display: none;
+}
+.action-plan-btn-clear-show {
+  display: block;
+}
 .actionbox-active {
   border-color: #1C995D;
   border-radius: 10px 10px 0 0;
