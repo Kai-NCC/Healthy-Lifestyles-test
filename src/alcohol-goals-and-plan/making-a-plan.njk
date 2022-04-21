@@ -241,18 +241,19 @@
       }
 
       function addActionPlan(btn) {
+        let button = document.getElementById(btn);
         const idString = btn.split("-");
         let actionBox = document.getElementById(`actionbox-${idString[1]}`);
 
         if (actionBox.classList.contains("actionbox-active")) {
           actionBox.classList.remove("actionbox-active");
           actionBox.nextElementSibling.classList.remove("actionbox-active");
+          button.innerHTML = "Add action plan";
         } else {
           actionBox.classList.add("actionbox-active");
           actionBox.nextElementSibling.classList.add("actionbox-active");
+          button.innerHTML = "Save action plan";
         }
-
-
       }
 
       function submitFormConfirm(checkboxObject) {
