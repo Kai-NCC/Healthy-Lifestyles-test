@@ -12676,6 +12676,12 @@ section.section_stage_theme .lead {
   margin-bottom: 0;
 }
 
+.actionbox-saved {
+  border-color: #343a40;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+
 .action-plan-area {
   border-bottom: solid #1C995D 2px;
   border-left: solid #1C995D 2px;
@@ -12690,6 +12696,19 @@ section.section_stage_theme .lead {
 .action-plan-area.actionbox-active {
   display: flex;
   flex-direction: column;
+}
+
+.action-plan-area.actionbox-saved {
+  display: flex;
+  flex-direction: column;
+  background-color: #dee2e6;
+  border-color: #495057;
+}
+
+.action-plan-area.actionbox-saved input {
+  background-color: #dee2e6;
+  border-color: #dee2e6;
+  color: #212529;
 }
 
 .breadcrumbs {
