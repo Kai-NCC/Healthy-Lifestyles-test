@@ -312,6 +312,11 @@
   border-radius: 10px 10px 0 0;
   margin-bottom: 0;
 }
+.actionbox-saved {
+  border-color: $gray-800;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
 .action-plan-area {
   border-bottom: solid #1C995D 2px;
   border-left: solid #1C995D 2px;
@@ -325,4 +330,15 @@
 .action-plan-area.actionbox-active {
   display: flex;
   flex-direction: column;
+}
+.action-plan-area.actionbox-saved {
+  display: flex;
+  flex-direction: column;
+  background-color: $gray-300;
+  border-color: $gray-700;
+}
+.action-plan-area.actionbox-saved input {
+  background-color: $gray-300;
+  border-color: $gray-300;
+  color: $dark;
 }

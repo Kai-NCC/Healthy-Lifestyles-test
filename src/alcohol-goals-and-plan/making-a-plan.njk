@@ -223,7 +223,7 @@
 
         parentElement.appendChild(column);
         column.appendChild(newElement);
-        createActionPlanDiv(column);
+        createActionPlanDiv(column, `actionbox-${encodedID}-input`);
         column.appendChild(newButton);
       }
 
@@ -245,14 +245,28 @@
         const idString = btn.split("-");
         let actionBox = document.getElementById(`actionbox-${idString[1]}`);
 
+        let inputField1 = document.getElementById(`actionbox-${idString[1]}-input-1`);
+        let inputField2 = document.getElementById(`actionbox-${idString[1]}-input-2`);
+        let inputField3 = document.getElementById(`actionbox-${idString[1]}-input-3`);
+
         if (actionBox.classList.contains("actionbox-active")) {
           actionBox.classList.remove("actionbox-active");
+          actionBox.classList.add("actionbox-saved");
           actionBox.nextElementSibling.classList.remove("actionbox-active");
-          button.innerHTML = "Add action plan";
+          actionBox.nextElementSibling.classList.add("actionbox-saved");
+          button.innerHTML = "Edit action plan";
+          inputField1.disabled = true;
+          inputField2.disabled = true;
+          inputField3.disabled = true;
         } else {
           actionBox.classList.add("actionbox-active");
+          actionBox.classList.remove("actionbox-saved");
           actionBox.nextElementSibling.classList.add("actionbox-active");
+          actionBox.nextElementSibling.classList.remove("actionbox-saved");
           button.innerHTML = "Save action plan";
+          inputField1.disabled = false;
+          inputField2.disabled = false;
+          inputField3.disabled = false;
         }
       }
 
@@ -272,17 +286,17 @@
         }
       }
 
-      function createActionPlanDiv(parentColumn) {
+      function createActionPlanDiv(parentColumn, inputID) {
         let actionPlanDiv = document.createElement('div');
         actionPlanDiv.classList.add("action-plan-area");
         actionPlanDiv.innerHTML = `
           <h4>Action plan</h4>
           <h5 class="h6">When</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
+          <input id="${inputID}-1" class="form-control form-text mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
           <h5 class="h6">Where (setting or environment)</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
+          <input id="${inputID}-2" class="form-control form-text mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
           <h5 class="h6">What</h5>
-          <input class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
+          <input id="${inputID}-3" class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
         `;
         parentColumn.appendChild(actionPlanDiv);
       }
