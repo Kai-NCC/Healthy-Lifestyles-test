@@ -90,6 +90,12 @@
           console.log(`goal ${i}= ${goalsArray[i]}`)
           addGoalDivWithPlan(goalsArray[i]);
         }
+        
+
+        let actionPlanObj = getCookie('actionPlanObject');
+        console.log(`actionPlanOnj = ${actionPlanObj}`)
+        JSON.parse(actionPlanObj);
+
       }
 
       function getCookie(cname) {
