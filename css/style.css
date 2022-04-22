@@ -12212,9 +12212,6 @@ section.section_stage_theme {
   padding: 40px 0px;
   margin-bottom: 40px;
 }
-section.section_stage_theme h1, section.section_stage_theme .h1 {
-  font-weight: 700;
-}
 section.section_stage_theme .lead {
   color: #212529;
   font-weight: 400;
@@ -12995,7 +12992,7 @@ p code {
 .goal-summary-list .goal-summary-header {
   font-size: 1.25rem;
   font-weight: 700;
-  border-bottom: solid #dee2e6 1px;
+  border-bottom: solid #adb5bd 1px;
   margin-bottom: 10px;
 }
 .goal-summary-list .goal-summary-header ul {
