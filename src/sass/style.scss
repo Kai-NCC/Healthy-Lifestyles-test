@@ -132,3 +132,27 @@ p code {
    justify-content: center;
  }
 }
+.goal-summary-list {
+  display: block;
+  border: solid $gray-500 1px;
+  border-radius: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  .goal-summary-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: solid $gray-300 1px;
+    margin-bottom: 10px;
+    ul {
+      font-size: 1rem;
+      font-weight: 500;
+      list-style: none;
+      padding: 10px;
+    }
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0px;
+    }
+  }
+}
