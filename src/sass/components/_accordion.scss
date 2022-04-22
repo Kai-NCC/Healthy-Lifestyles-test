@@ -12,7 +12,7 @@
         outline: solid 3px $focus-colour;
       }
       &::after {
-        transform: rotate(90deg) scale(1.2);
+        transform: rotate(-90deg) scale(1.2);
       }
     }
     .accordion-button.collapsed {
@@ -21,7 +21,7 @@
         color: black;
       }
       &::after {
-        transform: rotate(0deg) scale(1.2);
+        transform: rotate(90deg) scale(1.2);
       }
     }
   }
