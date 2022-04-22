@@ -12803,7 +12803,7 @@ section.section_stage_theme .lead {
   outline: solid 3px #ffdd00;
 }
 #accordionReasons .accordion-header .accordion-button::after, #accordionGoals .accordion-header .accordion-button::after, #accordionReasonsModal .accordion-header .accordion-button::after, #accordionGoalsModal .accordion-header .accordion-button::after {
-  transform: rotate(90deg) scale(1.2);
+  transform: rotate(-90deg) scale(1.2);
 }
 #accordionReasons .accordion-header .accordion-button.collapsed, #accordionGoals .accordion-header .accordion-button.collapsed, #accordionReasonsModal .accordion-header .accordion-button.collapsed, #accordionGoalsModal .accordion-header .accordion-button.collapsed {
   color: #6c757d;
@@ -12812,7 +12812,7 @@ section.section_stage_theme .lead {
   color: black;
 }
 #accordionReasons .accordion-header .accordion-button.collapsed::after, #accordionGoals .accordion-header .accordion-button.collapsed::after, #accordionReasonsModal .accordion-header .accordion-button.collapsed::after, #accordionGoalsModal .accordion-header .accordion-button.collapsed::after {
-  transform: rotate(0deg) scale(1.2);
+  transform: rotate(90deg) scale(1.2);
 }
 
 .accordion-flush .accordion-item {
