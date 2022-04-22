@@ -405,7 +405,7 @@
           let when = document.getElementById(`actionbox-${encodedID}-input-1`);
           let where = document.getElementById(`actionbox-${encodedID}-input-2`);
           let what = document.getElementById(`actionbox-${encodedID}-input-3`);
-          actionPlanJSONstring = actionPlanJSONstring.concat(`{"goal${i}":"${goalsArray[i]}", "when":"${when.value}", "where":"${where.value}", "what":"${what.value}"}`);
+          actionPlanJSONstring = actionPlanJSONstring.concat(`{"goal":"${goalsArray[i]}", "when":"${when.value}", "where":"${where.value}", "what":"${what.value}"}`);
           console.log(`added goal ${goalsArray[i]}`);
           if (i == goalsArray.length - 1) {
             console.log(`final goal, appending with ending`);
@@ -421,7 +421,7 @@
 
         let hour = 1/24;
         setCookie('actionPlanObject', actionPlanJSONstring, hour);
-        
+        window.location.href = "/Healthy-Lifestyles-test/public/alcohol-goals-and-plan/summary";
 
         /*
         for goal in goals {
