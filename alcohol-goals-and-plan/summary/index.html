@@ -111,6 +111,7 @@
         </div>
 
         <div class="row py-4" id="goals-area-row">
+
         </div>
 
         <div class="double-btn-group">
@@ -149,8 +150,31 @@
 
         for (i = 0; i < goalsArray.length; i++) {
           console.log(`goal ${i}= ${goalsArray[i]}`)
-          addGoalDivWithPlan(goalsArray[i]);
+          // addGoalDivWithPlan(goalsArray[i]);
         }
+
+        let actionPlanString = getCookie('actionPlanObject');
+        console.log(`actionPlanString = ${actionPlanString}`)
+        let actionPlanObj =  JSON.parse(actionPlanString);
+
+        console.log(actionPlanObj.goals[0].when);
+
+        let goalsParentDiv = document.getElementById("goals-area-row");
+        let goalSummary = document.createElement('ul');
+
+        for (i = 0; i < actionPlanObj.goals.length; i++) {
+          let newGoal = document.createElement('li');
+          newGoal.innerHTML = `
+            ${actionPlanObj.goals[i].goal}
+            <ul>
+              <li>${actionPlanObj.goals[i].when}</li>
+              <li>${actionPlanObj.goals[i].where}</li>
+              <li>${actionPlanObj.goals[i].what}</li>
+            </ul>
+          `;
+          goalSummary.appendChild(newGoal);
+        }
+        goalsParentDiv.appendChild(goalSummary);
       }
 
       function getCookie(cname) {
