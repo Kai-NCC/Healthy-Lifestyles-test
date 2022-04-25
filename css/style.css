@@ -12981,6 +12981,16 @@ p code {
   justify-content: center;
 }
 
+.reasons-summary-list {
+  display: block;
+  border: solid #adb5bd 1px;
+  border-radius: 6px;
+  padding: 20px;
+}
+.reasons-summary-list li {
+  margin: 10px;
+}
+
 .goal-summary-list {
   display: block;
   border: solid #adb5bd 1px;
