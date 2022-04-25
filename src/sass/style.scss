@@ -132,6 +132,15 @@ p code {
    justify-content: center;
  }
 }
+.reasons-summary-list {
+  display: block;
+  border: solid $gray-500 1px;
+  border-radius: 6px;
+  padding: 20px;
+  li {
+    margin: 10px;
+  }
+}
 .goal-summary-list {
   display: block;
   border: solid $gray-500 1px;

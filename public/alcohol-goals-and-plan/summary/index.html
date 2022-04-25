@@ -94,25 +94,14 @@
       <div class="col-12 col-md-9">
         <h2 class="h3 mb-2">Summary</h2>
 
-        <div class="accordion" id="accordionReasons">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSelectedReasons">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                My reasons
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
-              <div class="accordion-body">
-                <ul id="selectedReasonsList">
-                </ul>
-              </div>
-            </div>
-          </div>
+        
+        <h3 class="h4 mt-4">My reasons</h2>
+        <div class="py-3" id="reasons-area-row">
+
         </div>
 
-
-        <h3 class="h4 mt-4">My goals and action plans</h2>
-        <div class="py-4" id="goals-area-row">
+        <h3 class="h4">My goals and action plans</h2>
+        <div class="py-3" id="goals-area-row">
 
         </div>
 
@@ -143,17 +132,16 @@
         console.log(`cookie contents(reasons)= ${reasons}`);
         console.log(`cookie contents(goals)= ${goals}`);
 
-        for (i = 0; i < reasonsArray.length; i++) {
-          console.log(`reason ${i}= ${reasonsArray[i]}`)
-          let item = document.createElement('li');
-          item.innerHTML = reasonsArray[i];
-          parentElement.appendChild(item);
-        }
+        let reasonsParentDiv = document.getElementById("reasons-area-row");
+        let reasonsSummary = document.createElement('ul');
+        reasonsSummary.classList.add("reasons-summary-list");
 
-        for (i = 0; i < goalsArray.length; i++) {
-          console.log(`goal ${i}= ${goalsArray[i]}`)
-          // addGoalDivWithPlan(goalsArray[i]);
+        for (i = 0; i < reasonsArray.length; i++) {
+          let newReason = document.createElement('li');
+          newReason.innerHTML = reasonsArray[i];
+          reasonsSummary.appendChild(newReason);
         }
+        reasonsParentDiv.appendChild(reasonsSummary);
 
         let actionPlanString = getCookie('actionPlanObject');
         console.log(`actionPlanString = ${actionPlanString}`)
