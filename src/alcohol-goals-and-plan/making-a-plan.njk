@@ -321,14 +321,28 @@
         actionPlanDiv.innerHTML = `
           <h4>Action plan</h4>
           <h5 class="h6">When</h5>
-          <input id="${inputID}-1" class="form-control form-text mb-3" type="text" placeholder="For example, Saturday night" aria-label="Action plan - when">
+          <textarea id="${inputID}-1" class="form-control form-text mb-3 auto-growing-text" placeholder="For example, Saturday night" aria-label="Action plan - when"></textarea>
           <h5 class="h6">Where (setting or environment)</h5>
-          <input id="${inputID}-2" class="form-control form-text mb-3" type="text" placeholder="For example, at home" aria-label="Action plan - where">
+          <textarea id="${inputID}-2" class="form-control form-text mb-3 auto-growing-text" placeholder="For example, at home" aria-label="Action plan - where"></textarea>
           <h5 class="h6">What</h5>
-          <input id="${inputID}-3" class="form-control form-text mb-3" type="text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what">
+          <textarea id="${inputID}-3" class="form-control form-text mb-3 auto-growing-text" placeholder="For example, drinking non-alcohol" aria-label="Action plan - what"></textarea>
         `;
         parentColumn.appendChild(actionPlanDiv);
+        document.querySelectorAll('.auto-growing-text').forEach(item => {
+          item.addEventListener('input', event => {
+            item.style.height = "auto";
+            item.style.height = item.scrollHeight + "px";
+          })
+        })
       }
+
+      document.querySelectorAll('.auto-growing-text').forEach(item => {
+        item.addEventListener('input', event => {
+          console.log("input logged");
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+        })
+      })
 
       function submitFormContinue() {
 

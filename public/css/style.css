@@ -12364,6 +12364,11 @@ section.section_stage_theme .lead {
   filter: none;
 }
 
+.form-text {
+  resize: none;
+  overflow: hidden;
+  height: 60px;
+}
 .form-text:focus {
   transition: none;
   border-color: #ffdd00;
@@ -12717,7 +12722,7 @@ section.section_stage_theme .lead {
   border-color: #495057;
 }
 
-.action-plan-area.actionbox-saved input {
+.action-plan-area.actionbox-saved textarea {
   background-color: #dee2e6;
   border-color: #dee2e6;
   color: #212529;
@@ -12998,6 +13003,7 @@ p code {
   list-style: none;
   margin: 0;
   padding: 20px;
+  overflow-wrap: break-word;
 }
 .goal-summary-list .goal-summary-header {
   font-size: 1.25rem;

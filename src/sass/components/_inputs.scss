@@ -59,6 +59,9 @@
   }
 }
 .form-text {
+  resize: none;
+  overflow: hidden;
+  height: 60px;
   &:focus {
     transition: none;
     border-color: $focus-colour;
@@ -348,7 +351,7 @@
   background-color: $gray-300;
   border-color: $gray-700;
 }
-.action-plan-area.actionbox-saved input {
+.action-plan-area.actionbox-saved textarea {
   background-color: $gray-300;
   border-color: $gray-300;
   color: $dark;
