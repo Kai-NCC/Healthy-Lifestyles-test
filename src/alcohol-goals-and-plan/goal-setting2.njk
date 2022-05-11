@@ -1,0 +1,404 @@
+{% extends "template.njk" %}
+
+{% import "_pattern_macros/navigation_card.njk" as navcard %}
+{% import "_pattern_macros/general_card.njk" as generalcard %}
+
+{% set title = "Goal setting" %}
+
+{% block main %}
+
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-2">
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Care, support and health</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Health and wellbeing</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | url }}">Healthy lifestyles</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/help-to-cut-back-on-your-drinking/' | url }}">Help to cut back on your drinking</a></li>
+          <li class="breadcrumb-item active">Alcohol goals and plan</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section_stage_theme">
+    <div class="container">
+      <h1 class="h2">Alcohol goals and plan</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="col-12 col-md-9">
+        <h2 class="h3 mb-2">Goal setting</h2>
+        <p>Now think about what it is exactly that you want to change.</p>
+        <p>A goal can be <strong>broad</strong>. For example: "Drink less alcohol" or "Have drink-free days."</p>
+        <p>A goal could also be more <strong>specific</strong>. For example: "Work out a strategy on how to politely refuse a drink when with friends or family."</p>
+        
+        <p>We have provided some more example goals for you, but feel free to add your own if you would like to.</p>
+
+        <div class="accordion" id="accordionReasons">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSelectedReasons">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                My reasons
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasons" data-bs-parent="#accordionReasons">
+              <div class="accordion-body">
+                <ul id="selectedReasonsList">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row py-4" id="goals-area-row">
+          <div class="col-12 col-md-5" id="addGoalsDiv">
+            <div class="interactive-text-box empty">
+              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                <p class="placeholder-text">Add goal</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="reasonsModal" tabindex="-1" aria-labelledby="reasonsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="reasonsModalLabel">Goals</h4>
+                <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
+              </div>
+              <div class="accordion" id="accordionReasonsModal">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSelectedReasonsModal">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneModal" aria-expanded="true" aria-controls="collapseOneModal">
+                      My reasons
+                    </button>
+                  </h2>
+                  <div id="collapseOneModal" class="accordion-collapse collapse show" aria-labelledby="headingSelectedReasonsModal" data-bs-parent="#accordionReasonsModal">
+                    <div class="accordion-body">
+                      <ul id="selectedReasonsListModal">
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <form id="goalsForm">
+                <div class="modal-body">
+                  <div class="modal-selection-list">
+                    <div id="goalsList">
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Record or monitor what I'm drinking" id="goal1">
+                      <label class="form-check-label" for="goal1">
+                        Record or monitor what I'm drinking
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Try low-alcohol alternatives to my usual drinks" id="goal2">
+                      <label class="form-check-label" for="goal2">
+                        Try low-alcohol alternatives to my usual drinks
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Lower my drinking at weekends" id="goal3">
+                      <label class="form-check-label" for="goal3">
+                        Lower my drinking at weekends
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Seek support from a specialist group or individual" id="goal4">
+                      <label class="form-check-label" for="goal4">
+                        Seek support from a specialist group or individual
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Replace alcoholic drinks with soft drinks" id="goal5">
+                      <label class="form-check-label" for="goal5">
+                        Replace alcoholic drinks with soft drinks
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Count my drinks when I'm drinking" id="goal6">
+                      <label class="form-check-label" for="goal6">
+                        Count my drinks when I'm drinking
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Find something to distract me at those times when I might have an alcoholic drink" id="goal7">
+                      <label class="form-check-label" for="goal7">
+                        Find something to distract me at those times when I might have an alcoholic drink
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Identify the situations‚ people or settings that lead me to drink more" id="goal8">
+                      <label class="form-check-label" for="goal8">
+                        Identify the situations‚ people or settings that lead me to drink more
+                      </label>
+                    </div>
+                    <div class="form-check reasons-checkbox">
+                      <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Work out a strategy on how to politely refuse a drink when with friends or family" id="goal9">
+                      <label class="form-check-label" for="goal9">
+                        Work out a strategy on how to politely refuse a drink when with friends or family
+                      </label>
+                    </div>
+                    
+                    </div>
+                    <div id="own-reason-area">                 
+                      <p class="reason-custom-label">Add your own goal:</p>
+                      <textarea class="selection-textarea" id="ownGoal" name="goal-custom" rows="4" cols="50"></textarea>
+                      <div>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownGoal').value);" type="button">Add goal</button>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn form-btn" data-bs-dismiss="modal" onclick="submitFormConfirm(this.form.goalOption);">Confirm goals</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="double-btn-group">
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue(goalsForm.goalOption);"></input>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      
+      window.onload = function() {
+        let parentElement = document.getElementById("selectedReasonsList");
+        let parentElementModal = document.getElementById("selectedReasonsListModal");
+        let reasons = getCookie('reasonsList');
+        
+        let reasonsArray = reasons.split(",");
+        console.log(`cookie contents= ${reasons}`);
+        for (i = 0; i < reasonsArray.length; i++) {
+          console.log(`reason ${i}= ${reasonsArray[i]}`)
+          let item = document.createElement('li');
+          let item2 = document.createElement('li');
+          item.innerHTML = reasonsArray[i];
+          item2.innerHTML = reasonsArray[i];
+          parentElement.appendChild(item);
+          parentElementModal.appendChild(item2);
+        }
+
+        let goals = getCookie('goalsList');
+        let goalsArray = goals.split(",");
+        let goalsForm = document.getElementById("goalsForm");
+
+        if (goals === '') {
+          console.log(`cookie empty, returning`);
+          return;
+        }
+
+        for (i = 0; i < goalsArray.length; i++) {
+          let defaultGoal = false;
+          console.log(`analysing option ${goalsArray[i]}`);
+          for (j = 0; j < goalsForm.length; j++) {
+            if (goalsForm[j].value == goalsArray[i]) {
+              console.log(`input value ${goalsForm[j].value} == ${goalsForm[i]}, checked`);
+              goalsForm[j].checked = true;
+              defaultGoal = true;
+            }
+          }
+          if (!defaultGoal) {
+            console.log(`adding custom option ${goalsArray[i]}`);
+            replaceCustomOption(goalsArray[i]);
+          }
+          addReasonDiv(goalsArray[i]);
+        }
+      }
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      function selectBtnOption(btnID) {
+        let button = document.getElementById(btnID);
+        button.classList.toggle("selected");
+  
+        if (btnID == "reason9") {
+          x = document.getElementById("own-reason-area");
+
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+      }
+
+      function addCustomText(text) {
+        console.log(`custom text= ${text}`);
+        addReasonDiv(text);
+      }
+
+      function addCustomOption(text) {
+        let ownGoalTextArea = document.getElementById("ownGoal");
+
+        if (ownGoalTextArea.value === "") {
+          console.log("reasons empty, returning");
+          ownGoalTextArea.classList.add("error");
+          return;
+        }
+        ownGoalTextArea.classList.remove("error");
+
+        let parentElement = document.getElementById("goalsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "goalOption";
+        input.type = "checkbox";
+        input.value = text;
+        input.id = "goalsCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.htmlFor = "goalsCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
+
+        ownGoalTextArea.value = "";
+      }
+
+      function replaceCustomOption(text) {
+        let ownGoalTextArea = document.getElementById("ownGoal");
+
+        let parentElement = document.getElementById("goalsList");
+        let divWrapper = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        
+        divWrapper.classList.add("form-check");
+        divWrapper.classList.add("reasons-checkbox");
+        divWrapper.classList.add("custom-reason-checkbox");
+
+        input.classList.add("form-check-input");
+        input.classList.add("reasons-input");
+        input.name = "goalOption";
+        input.type = "checkbox";
+        input.value = text;
+        input.id = "goalsCustomX";
+        input.checked = true;
+
+        label.classList.add("form-check-label");       
+        label.htmlFor = "goalsCustomX";       
+        label.innerHTML = text;       
+
+        parentElement.appendChild(divWrapper);
+        divWrapper.appendChild(input);
+        divWrapper.appendChild(label);
+
+        ownGoalTextArea.value = "";
+      }
+
+      function addReasonDiv(text) {
+        let parentElement = document.getElementById("goals-area-row");
+        let column = document.createElement('div');
+        let newElement = document.createElement('div');
+
+        column.classList.add("col-12");
+        column.classList.add("col-md-5");
+        newElement.classList.add("interactive-text-box");
+        newElement.innerHTML = text;
+        
+        parentElement.appendChild(column);
+        column.appendChild(newElement);
+      }
+
+      function clearItems() {
+        let parentElement = document.getElementById("goals-area-row");
+        let children = parentElement.childNodes;
+
+        while (children.length > 2) {
+          let child = parentElement.lastElementChild;
+          console.log(`child id= ${child.id}`);
+          if (child.id != "addGoalsDiv")
+            parentElement.removeChild(child);
+          else break;
+        }
+      }
+
+      function submitFormConfirm(checkboxObject) {
+
+        clearItems();
+
+        let selectedChoices = null;
+
+        for (var i = 0; i < checkboxObject.length; i++) {
+          console.log(`checkbox ${i} = ${checkboxObject[i].checked}`);
+          if (checkboxObject[i].checked) {
+            let reasonText = checkboxObject[i].nextElementSibling.innerHTML;
+            console.log(`sibling text=${reasonText}`);
+            addReasonDiv(reasonText);
+          }
+        }
+      }
+
+      function submitFormContinue(goals) {
+        let goalsList = [];
+
+        for (var i = 0; i < goals.length; i++) {
+          if (goals[i].checked) {
+            text = goals[i].value;
+            goalsList.push(text);
+            console.log(`added goal ${text}`);
+          }
+        }
+
+        console.log(`list of reasons= ${goalsList}`);
+
+        let hour = 1/24;
+        setCookie('goalsList', goalsList, hour);
+
+        window.location.href = "{{ '/alcohol-goals-and-plan/making-a-plan' | url }}";
+      }
+
+      function submitFormBack() {
+        window.location.href = "{{ '/alcohol-goals-and-plan/your-reasons-for-change' | url }}";
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+    </script>
+
+  </section>
+{% endblock %}
