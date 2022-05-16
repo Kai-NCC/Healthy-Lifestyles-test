@@ -115,11 +115,30 @@
             If you would be happy to receive a survey, please tick this box
           </label>
         </div>
-        <input type="button" class="btn  btn-lg form-btn my-3" value="Set goals and make an action plan" id="submit" onclick="submitForm(document.getElementById('privacyFormOne').privacyQuestionOne, document.getElementById('privacyFormTwo').privacyQuestionTwo, document.getElementById('privacyFormThree').privacyQuestionThree);"></input>
+
+        <div class="alert alert-success green-info-box" role="alert">
+          <svg width="39" height="34" viewBox="0 0 39 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.7165 17.4998C19.3832 11.6332 26.2998 9.04984 32.1665 11.7165C38.0332 14.3832 40.6165 21.2998 37.9498 27.1665C36.0665 31.3332 31.9165 33.9998 27.3332 33.9998C22.8332 33.9998 18.7165 31.3998 16.7832 27.3332H0.666504V23.9998C0.766504 22.0998 2.0665 20.5498 4.5665 19.2998C7.0665 18.0498 10.1998 17.3998 13.9998 17.3332C14.9498 17.3332 15.8498 17.4165 16.7165 17.4998ZM13.9998 0.666504C15.8665 0.716504 17.4332 1.3665 18.6832 2.6165C19.9332 3.8665 20.5498 5.43317 20.5498 7.33317C20.5498 9.23317 19.9332 10.7998 18.6832 12.0498C17.4332 13.2998 15.8665 13.9165 13.9998 13.9165C12.1332 13.9165 10.5665 13.2998 9.3165 12.0498C8.0665 10.7998 7.44984 9.23317 7.44984 7.33317C7.44984 5.43317 8.0665 3.8665 9.3165 2.6165C10.5665 1.3665 12.1332 0.716504 13.9998 0.666504ZM27.3332 30.6665C29.5433 30.6665 31.6629 29.7885 33.2257 28.2257C34.7885 26.6629 35.6665 24.5433 35.6665 22.3332C35.6665 20.123 34.7885 18.0034 33.2257 16.4406C31.6629 14.8778 29.5433 13.9998 27.3332 13.9998C25.123 13.9998 23.0034 14.8778 21.4406 16.4406C19.8778 18.0034 18.9998 20.123 18.9998 22.3332C18.9998 24.5433 19.8778 26.6629 21.4406 28.2257C23.0034 29.7885 25.123 30.6665 27.3332 30.6665ZM25.6665 17.3332H28.1665V22.0332L32.2332 24.3832L30.9832 26.5498L25.6665 23.4832V17.3332Z" fill="black"/>
+</svg>
+This process will take approximately 20 minutes
+        </div>
+
+        <input type="button" class="btn btn-lg form-btn my-3 form-btn-start" value="Start" id="submit" onclick="submitForm(document.getElementById('privacyFormOne').privacyQuestionOne, document.getElementById('privacyFormTwo').privacyQuestionTwo, document.getElementById('privacyFormThree').privacyQuestionThree);"></input>
       </div>
     </div>
 
     <script>
+      const checkbox = document.getElementById('privacyCheckbox1');
+      const startBtn = document.getElementById('submit');
+
+      checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+          startBtn.style.display = "block";
+        } else {
+          startBtn.style.display = "none";
+        }
+      })
+
       function submitForm(checkObject1, checkObject2, checkObject3) {
         let selectedInput = null;
 
