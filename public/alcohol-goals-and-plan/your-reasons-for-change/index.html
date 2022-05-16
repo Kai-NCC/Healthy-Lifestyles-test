@@ -95,18 +95,18 @@
         <h2 class="h3 mb-2">Your reasons for change</h2>
         <p>Think about the most important reason or reasons why you want to cut down your drinking. It can be helpful to note down this reason and to remind yourself of it.</p>
         
-        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">The most important reason/s for wanting to lower my drinking is/are:</h3>
+        <h3 class="h4 mb-3 mt-4" style="font-weight: 700">The most important reason/s for wanting to lower my drinking is/are:</h3>
 
-        <div class="row py-4" id="reasons-area-row">
+        <div class="row py-2" id="reasons-area-row">
           <div class="col-12 col-md-5" id="addReasonsDiv">
-            <div class="interactive-text-box empty">
-              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                <p class="placeholder-text">Add reason</p>
-              </button>
-            </div>
+            
           </div>
         </div>
+
+        <button type="button" class="btn btn-primary btn-lg mb-4" data-bs-toggle="modal" data-bs-target="#reasonsModal"><svg width="28" height="28" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
+</svg>
+Add reason/s</button>
 
         <!-- Modal -->
         <div class="modal fade" id="reasonsModal" tabindex="-1" aria-labelledby="reasonsModalLabel" aria-hidden="true">
@@ -117,9 +117,16 @@
                 <button type="button" class="modal-close-button btn-close text-reset" data-bs-dismiss="modal" aria-label="Close reasons window"></button>
               </div>
               <form id="reasonsForm">
-                <div class="modal-body">
+                <div class="modal-body pt-0">
                   <div class="modal-selection-list">
                     <div id="reasonsList">
+                    <div id="own-reason-area" class="mb-3">                 
+                      <p class="reason-custom-label my-0">Add your own reason:</p>
+                      <textarea class="selection-textarea mb-0" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
+                      <div>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
+                      </div>
+                    </div>
                     <div class="form-check reasons-checkbox">
                       <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="To be healthier" id="reason1">
                       <label class="form-check-label" for="reason1">
@@ -169,13 +176,7 @@
                       </label>
                     </div>
                     </div>
-                    <div id="own-reason-area">                 
-                      <p class="reason-custom-label">Add your own reason:</p>
-                      <textarea class="selection-textarea" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
-                      <div>
-                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
-                      </div>
-                    </div>
+                    
                     <hr>
                   </div>
                 </div>
@@ -188,8 +189,8 @@
         </div>
 
         <div class="double-btn-group">
-          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 mx-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 mx-2" value="Continue" id="submit" onclick="submitFormContinue(reasonsForm.reasonsOption);"></input>
+          <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 me-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
+          <input type="button" class="btn btn-lg form-btn my-3 ms-2" value="Continue" id="submit" onclick="submitFormContinue(reasonsForm.reasonsOption);"></input>
         </div>
       </div>
     </div>
