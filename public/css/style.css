@@ -12431,8 +12431,8 @@ section.section_stage_theme .lead {
   float: right;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.589844 11.08L5.16984 6.5L0.589844 1.91L1.99984 0.5L7.99984 6.5L1.99984 12.5L0.589844 11.08Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right center;
-  padding-right: 32px;
+  background-position: 92% 50%;
+  padding-right: 40px;
 }
 .form-btn-start:focus {
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.589844 11.08L5.16984 6.5L0.589844 1.91L1.99984 0.5L7.99984 6.5L1.99984 12.5L0.589844 11.08Z' fill='black'/%3E%3C/svg%3E");
