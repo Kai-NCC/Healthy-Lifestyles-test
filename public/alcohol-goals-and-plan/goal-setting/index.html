@@ -93,27 +93,11 @@
     <div class="container">
       <div class="col-12 col-md-9">
         <h2 class="h3 mb-2">Goal setting</h2>
-        <p>Now think about what it is exactly that you want to change. We've given some examples of broad and specific goals to help you write a goal to suit your needs.</p>
+        <p>Now think about what it is exactly that you want to change.</p>
+        <p>A goal can be <strong>broad</strong>. For example: "Drink less alcohol" or "Have drink-free days."</p>
+        <p>A goal could also be more <strong>specific</strong>. For example: "Work out a strategy on how to politely refuse a drink when with friends or family."</p>
         
-        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">Broad goals</h3>
-        <ul>
-          <li>Drink less alcohol</li>
-          <li>Stop drinking altogether</li>
-          <li>Have drink-free days</li>
-        </ul>
-
-        <h3 class="h4 mb-2 mt-5" style="font-weight: 700">Specific goals</h3>
-        <ul>
-          <li>Record or monitor what I'm drinking</li>
-          <li>Try low-alcohol alternatives to my usual drinks</li>
-          <li>Lower my drinking at weekends</li>
-          <li>Seek support from a specialist group or individual</li>
-          <li>Replace alcoholic drinks with soft drinks</li>
-          <li>Count my drinks when I'm drinking</li>
-          <li>Find something to distract me at those times when I might have an alcoholic drink</li>
-          <li>Identify the situations, people or settings that lead me to drink more</li>
-          <li>Work out a strategy on how to politely refuse a drink when with friends or family</li>
-        </ul>
+        <p>We have provided some more example goals for you, but feel free to add your own if you would like to.</p>
 
         <div class="accordion" id="accordionReasons">
           <div class="accordion-item">
@@ -133,15 +117,14 @@
 
         <div class="row py-4" id="goals-area-row">
           <div class="col-12 col-md-5" id="addGoalsDiv">
-            <div class="interactive-text-box empty">
-              <button class="text-box-btn" data-bs-toggle="modal" data-bs-target="#reasonsModal">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#6c757d" class="me-2"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                <p class="placeholder-text">Add goal</p>
-              </button>
-            </div>
+            
           </div>
         </div>
 
+        <button id="addEditGoalsBtn" type="button" class="btn btn-primary btn-lg mb-4" data-bs-toggle="modal" data-bs-target="#reasonsModal"><svg width="28" height="28" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
+        </svg>
+        Add goals/s</button>
 
         <!-- Modal -->
         <div class="modal fade" id="reasonsModal" tabindex="-1" aria-labelledby="reasonsModalLabel" aria-hidden="true">
@@ -253,6 +236,8 @@
 
     <script>
       
+      let numberOfGoals = 0;
+
       window.onload = function() {
         let parentElement = document.getElementById("selectedReasonsList");
         let parentElementModal = document.getElementById("selectedReasonsListModal");
@@ -294,7 +279,9 @@
             replaceCustomOption(goalsArray[i]);
           }
           addReasonDiv(goalsArray[i]);
+          numberOfRGoals++;
         }
+        updateBtnHTML();
       }
 
       function getCookie(cname) {
@@ -433,6 +420,9 @@
 
         clearItems();
 
+        numberOfGoals = 0;
+        let addEditGoalsBtn = document.getElementById("addEditGoalsBtn");
+
         let selectedChoices = null;
 
         for (var i = 0; i < checkboxObject.length; i++) {
@@ -441,7 +431,28 @@
             let reasonText = checkboxObject[i].nextElementSibling.innerHTML;
             console.log(`sibling text=${reasonText}`);
             addReasonDiv(reasonText);
+            numberOfGoals++;
           }
+        }
+        console.log(`numberOfGoals= ${numberOfGoals}`);
+        updateBtnHTML();
+      }
+
+      function updateBtnHTML() {
+        let addEditGoalsBtn = document.getElementById("addEditGoalsBtn");
+        console.log(`numberOfGoals= ${numberOfGoals}`);
+        if (numberOfGoals > 0) {
+          addEditGoalsBtn.innerHTML = 
+          `<svg width="28" height="28" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
+          </svg>Add or edit goals/s`;
+          console.log(`changed contents to include edit because numberOfGoals is ${numberOfGoals}`);
+        } else {
+          addEditGoalsBtn.innerHTML = 
+          `<svg width="28" height="28" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
+          </svg>Add goals/s`;
+          console.log(`changed contents to NOT include edit because numberOfGoals is ${numberOfGoals}`);
         }
       }
 
