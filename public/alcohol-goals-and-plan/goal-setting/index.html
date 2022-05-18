@@ -150,9 +150,16 @@
                 </div>
               </div>
               <form id="goalsForm">
-                <div class="modal-body">
+                <div class="modal-body pt-0">
                   <div class="modal-selection-list">
                     <div id="goalsList">
+                    <div id="own-reason-area" class="my-3">                 
+                      <p class="reason-custom-label my-0">Add your own goal:</p>
+                      <textarea class="selection-textarea mb-0" id="ownGoal" name="goal-custom" rows="4" cols="50"></textarea>
+                      <div>
+                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownGoal').value);" type="button">Add goal</button>
+                      </div>
+                    </div>
                     <div class="form-check reasons-checkbox">
                       <input class="form-check-input reasons-input" name="goalOption" type="checkbox" value="Record or monitor what I'm drinking" id="goal1">
                       <label class="form-check-label" for="goal1">
@@ -209,13 +216,7 @@
                     </div>
                     
                     </div>
-                    <div id="own-reason-area">                 
-                      <p class="reason-custom-label">Add your own goal:</p>
-                      <textarea class="selection-textarea" id="ownGoal" name="goal-custom" rows="4" cols="50"></textarea>
-                      <div>
-                        <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownGoal').value);" type="button">Add goal</button>
-                      </div>
-                    </div>
+                    
                     <hr>
                   </div>
                 </div>
@@ -229,7 +230,7 @@
 
         <div class="double-btn-group">
           <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 me-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-          <input type="button" class="btn btn-lg form-btn my-3 ms-2" value="Continue" id="submit" onclick="submitFormContinue(goalsForm.goalOption);"></input>
+          <input id="continueBtn" type="button" class="btn btn-lg form-btn my-3 ms-2" value="Continue" id="submit" onclick="submitFormContinue(goalsForm.goalOption);"></input>
         </div>
       </div>
     </div>
@@ -237,6 +238,7 @@
     <script>
       
       let numberOfGoals = 0;
+      let continueBtn = document.getElementById("continueBtn");
 
       window.onload = function() {
         let parentElement = document.getElementById("selectedReasonsList");
@@ -279,7 +281,7 @@
             replaceCustomOption(goalsArray[i]);
           }
           addReasonDiv(goalsArray[i]);
-          numberOfRGoals++;
+          numberOfGoals++;
         }
         updateBtnHTML();
       }
@@ -447,12 +449,14 @@
           <path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
           </svg>Add or edit goals/s`;
           console.log(`changed contents to include edit because numberOfGoals is ${numberOfGoals}`);
+          continueBtn.style.display = "inline";
         } else {
           addEditGoalsBtn.innerHTML = 
           `<svg width="28" height="28" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 23C7.4875 23 3 18.5125 3 13C3 7.4875 7.4875 3 13 3C18.5125 3 23 7.4875 23 13C23 18.5125 18.5125 23 13 23ZM13 0.5C11.3585 0.5 9.73303 0.823322 8.21646 1.45151C6.69989 2.07969 5.3219 3.00043 4.16117 4.16117C1.81696 6.50537 0.5 9.68479 0.5 13C0.5 16.3152 1.81696 19.4946 4.16117 21.8388C5.3219 22.9996 6.69989 23.9203 8.21646 24.5485C9.73303 25.1767 11.3585 25.5 13 25.5C16.3152 25.5 19.4946 24.183 21.8388 21.8388C24.183 19.4946 25.5 16.3152 25.5 13C25.5 11.3585 25.1767 9.73303 24.5485 8.21646C23.9203 6.69989 22.9996 5.3219 21.8388 4.16117C20.6781 3.00043 19.3001 2.07969 17.7835 1.45151C16.267 0.823322 14.6415 0.5 13 0.5ZM14.25 6.75H11.75V11.75H6.75V14.25H11.75V19.25H14.25V14.25H19.25V11.75H14.25V6.75Z" fill="white"/>
           </svg>Add goals/s`;
           console.log(`changed contents to NOT include edit because numberOfGoals is ${numberOfGoals}`);
+          continueBtn.style.display = "none";
         }
       }
 

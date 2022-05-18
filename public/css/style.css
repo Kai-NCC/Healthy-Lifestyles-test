@@ -12740,6 +12740,10 @@ section.section_stage_theme .lead {
   color: #212529;
 }
 
+#continueBtn {
+  display: none;
+}
+
 .breadcrumbs {
   background-color: #ced4da;
   padding: 8px 0px;
