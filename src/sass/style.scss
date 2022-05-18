@@ -119,18 +119,30 @@ p code {
 }
 .download-wrapper {
   background-color: #006666;
-  height: 200px;
+  height: 250px;
   padding: 0;
+  padding-top: 20px;
   display: none;
   @include media-breakpoint-down(md) {
     display: block;
-  }  
- .container {
-   height: calc(100% + 10px);
-   display: flex;
-   align-items: flex-end;
-   justify-content: center;
- }
+  }
+  .download-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: 220px;
+    }
+  }
+  .container {
+    // height: calc(100% + 10px);
+    margin-top: -40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 }
 .reasons-summary-list {
   display: block;
