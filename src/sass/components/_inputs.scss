@@ -154,7 +154,7 @@
   display: flex;
   user-select: none;
   @include media-breakpoint-down(md) {
-    min-height: 100px;
+    min-height: none;
     height: auto;
     margin-bottom: 20px;
   }
@@ -309,6 +309,12 @@
       }
     }
   }
+}
+#addReasonsDiv {
+  display: none;
+}
+#addGoalsDiv {
+  display: none;
 }
 .testclassforinputs {
   color: red;
