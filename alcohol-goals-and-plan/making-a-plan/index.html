@@ -274,7 +274,7 @@
         newElement.id = `actionbox-${encodedID}`;
         
         newButtonAdd.classList.add("btn");
-        newButtonAdd.classList.add("btn-success");
+        newButtonAdd.classList.add("btn-primary");
         newButtonAdd.classList.add("btn-lg");
         newButtonAdd.classList.add("action-plan-btn");
         newButtonAdd.id = `actionplanbtn-${encodedID}`;
@@ -290,7 +290,7 @@
         newButtonClear.id = `actionplanbtn-clear-${encodedID}`;
         newButtonClear.onclick = function() { clearActionPlan(newButtonClear.id); };
         newButtonClear.type = "button";
-        newButtonClear.innerHTML = "Clear action plan";
+        newButtonClear.innerHTML = "Clear plan";
 
 
         parentElement.appendChild(column);
@@ -332,7 +332,7 @@
           actionBox.classList.add("actionbox-saved");
           actionBox.nextElementSibling.classList.remove("actionbox-active");
           actionBox.nextElementSibling.classList.add("actionbox-saved");
-          button.innerHTML = "Edit action plan";
+          button.innerHTML = "Edit plan";
           inputField1.disabled = true;
           inputField2.disabled = true;
           inputField3.disabled = true;
@@ -341,7 +341,7 @@
           actionBox.classList.remove("actionbox-saved");
           actionBox.nextElementSibling.classList.add("actionbox-active");
           actionBox.nextElementSibling.classList.remove("actionbox-saved");
-          button.innerHTML = "Save action plan";
+          button.innerHTML = "Save plan";
           inputField1.disabled = false;
           inputField2.disabled = false;
           inputField3.disabled = false;

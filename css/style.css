@@ -12480,7 +12480,7 @@ section.section_stage_theme .lead {
 }
 @media (max-width: 767.98px) {
   .interactive-text-box {
-    min-height: 100px;
+    min-height: none;
     height: auto;
     margin-bottom: 20px;
   }
@@ -12669,6 +12669,14 @@ section.section_stage_theme .lead {
   border: solid #1C995D 3px;
 }
 
+#addReasonsDiv {
+  display: none;
+}
+
+#addGoalsDiv {
+  display: none;
+}
+
 .testclassforinputs {
   color: red;
   background-color: aqua;
@@ -12738,6 +12746,10 @@ section.section_stage_theme .lead {
   background-color: #dee2e6;
   border-color: #dee2e6;
   color: #212529;
+}
+
+#continueBtn {
+  display: none;
 }
 
 .breadcrumbs {
