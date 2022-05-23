@@ -242,10 +242,8 @@
   }
 }
 .reason-custom-label {
-  font-weight: 600;
-  color: $gray-600;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  font-weight: 700;
+  // color: $gray-600;
 }
 .selection-textarea {
   resize: none;
@@ -374,5 +372,8 @@
   color: $dark;
 }
 #continueBtn {
+  display: none;
+}
+#emailInputForm {
   display: none;
 }
