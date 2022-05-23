@@ -121,12 +121,13 @@ Add reason/s</button>
                   <div class="modal-selection-list">
                     <div id="reasonsList">
                     <div id="own-reason-area" class="mb-3">                 
-                      <p class="reason-custom-label my-0">Add your own reason:</p>
+                      <p class="mb-2 reason-custom-label">Add your own reason:</p>
                       <textarea class="selection-textarea mb-0" id="ownReason" name="reason-custom" rows="4" cols="50"></textarea>
                       <div>
                         <button class="btn btn-primary btn-lg" onclick="addCustomOption(document.getElementById('ownReason').value);" type="button">Add reason</button>
                       </div>
                     </div>
+                    <p class="my-2 reason-custom-label">Or choose one of these suggestions:</p>
                     <div class="form-check reasons-checkbox">
                       <input class="form-check-input reasons-input" name="reasonsOption" type="checkbox" value="To be healthier" id="reason1">
                       <label class="form-check-label" for="reason1">

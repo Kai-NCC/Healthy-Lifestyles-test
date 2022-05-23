@@ -12585,10 +12585,7 @@ section.section_stage_theme .lead {
 }
 
 .reason-custom-label {
-  font-weight: 600;
-  color: #6c757d;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .selection-textarea {
@@ -12749,6 +12746,10 @@ section.section_stage_theme .lead {
 }
 
 #continueBtn {
+  display: none;
+}
+
+#emailInputForm {
   display: none;
 }
 

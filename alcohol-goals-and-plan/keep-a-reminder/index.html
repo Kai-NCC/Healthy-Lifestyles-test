@@ -118,15 +118,57 @@
           Would you like to receive your goal and plan as an email?
         </label>
       </div>
+      <div class="pb-4 pt-4" id="emailInputForm">
+        <form class="needs-validation" novalidate>
+          <label for="validationCustom01" class="form-label">Enter email:</label>
+          <input type="email" class="form-control" id="validationCustom01" required>
+          <div class="invalid-feedback">
+            Please enter a valid email.
+          </div>
+          <button class="btn btn-lg btn-success my-3" type="submit">Submit email and continue</button>
+        </form>
+      </div>
 
       <div class="double-btn-group">
-        <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 me-2" value="Previous" id="submit" onclick="submitFormBack();"></input>
-        <input type="button" class="btn btn-lg form-btn my-3 ms-2" value="Continue" id="submit" onclick="submitFormContinue();"></input>
+        <input type="button" class="btn btn-lg form-btn form-btn-muted my-3 me-2" value="Previous" onclick="submitFormBack();"></input>
+        <input type="button" class="btn btn-lg form-btn my-3 ms-2" value="Continue" id="reminderContinueBtn" onclick="submitFormContinue();" type="submit"></input>
       </div>
     </div>
 
     <script>
       
+      const emailCheckbox = document.getElementById('emailCheckbox');
+      const emailField = document.getElementById('emailInputForm');
+      const continueBtn = document.getElementById('reminderContinueBtn');
+
+      emailCheckbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+          emailField.style.display = "block";
+          continueBtn.style.display = "none";
+        } else {
+          emailField.style.display = "none";
+          continueBtn.style.display = "block";
+        }
+      })
+
+      // validation -----------------------------------------------------------
+      let forms = document.querySelectorAll (".needs-validation");
+
+      Array.prototype.slice.call (forms).forEach (function(form) {
+        form.addEventListener ("submit", function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            event.stopPropagation();
+            submitFormContinue();
+          }
+          form.classList.add("was-validated");
+        });
+      });
+      // end validation -------------------------------------------------------
+
       window.onload = function() {
         let parentElement = document.getElementById("selectedReasonsList");
         let parentElement2 = document.getElementById("selectedGoalsList");
